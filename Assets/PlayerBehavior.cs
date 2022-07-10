@@ -23,18 +23,18 @@ public class PlayerBehavior : MonoBehaviour
         //Debug.Log(Input.GetAxis("Vertical"));
 
         //MOVEMENT: WASD
-        float maxDistanceToMove = speed * Time.deltaTime; //time difference
-        Vector3 inputVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical") ); //x, y, z
-        Vector3 movementVector = inputVector * maxDistanceToMove; //scale up pieces of inputVector by maxDistanceToMove
-        Vector3 newPosition = transform.position + movementVector;
+        Vector3 inputVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")); //x, y, z
+        Rigidbody ourRigidBody = GetComponent<Rigidbody>();
 
-        transform.LookAt(newPosition);//change facing rotation
-        transform.position = newPosition;
+        ourRigidBody.velocity = inputVector * speed;
+
+        //face new position
+        Vector3 lookAtPosition = transform.position + inputVector; //just getting direction from this
+        transform.LookAt(lookAtPosition);//change facing rotation
       
-        //click to fire
         //if clicked, create bullet at our current position
         if (Input.GetButton("Fire1")) {
-            Instantiate(bulletPrefab, transform.position, transform.rotation);
+            Instantiate(bulletPrefab, transform.position + transform.forward, transform.rotation); //transform.forward = 1 unit in forward direction
         }
     }
 }
