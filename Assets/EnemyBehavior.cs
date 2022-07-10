@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
 {
-    public GameObject player;
     public float enemySpeed;
 
     public float secondsBetweenSpawns;
@@ -26,11 +25,25 @@ public class EnemyBehavior : MonoBehaviour
             Instantiate(gameObject);
         }
 
-        Rigidbody ourRigidBody = GetComponent<Rigidbody>();
-        Vector3 vectorToPlayer = player.transform.position - transform.position; //dif. b/t two positions: destination - origin
-        ourRigidBody.velocity = vectorToPlayer.normalized * enemySpeed; 
-        
-        //ourRigidBody.velocity = some kind of vector going towards player
+        if (References.thePlayer != null) { 
+            Rigidbody ourRigidBody = GetComponent<Rigidbody>();
+            Vector3 vectorToPlayer = References.thePlayer.transform.position - transform.position; //dif. b/t two positions: destination - origin
+            ourRigidBody.velocity = vectorToPlayer.normalized * enemySpeed;
+            //ourRigidBody.velocity = some kind of vector going towards player
+        }
+    }
 
+    private void OnCollisionEnter(Collision thisCollision)
+    {
+        GameObject theirGameObject = thisCollision.gameObject;
+        //does the collision have the EnemyBehavior script?
+        if (theirGameObject.GetComponent<PlayerBehavior>() != null)
+        {
+            HealthSystem theirHealthSystem = theirGameObject.GetComponent<HealthSystem>();
+            if (theirHealthSystem != null)
+            {
+                theirHealthSystem.TakeDamage(1);
+            }
+        }
     }
 }
