@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletBehavior : MonoBehaviour
 {
     public float bulletSpeed;
+    public float secondsUntilDestroyed;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,17 @@ public class BulletBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        secondsUntilDestroyed -= Time.deltaTime; //reduce by # seconds each update
+
+        if (secondsUntilDestroyed < 1)
+        {
+            transform.localScale *= secondsUntilDestroyed; //Vector3.one -> (1, 1, 1)
+        }
+
+        if (secondsUntilDestroyed < 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision thisCollision)

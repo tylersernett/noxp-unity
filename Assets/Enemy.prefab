@@ -114,6 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   enemySpeed: 8
+  secondsBetweenSpawns: 3
 --- !u!54 &6694354242168016345
 Rigidbody:
   m_ObjectHideFlags: 0
