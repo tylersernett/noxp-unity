@@ -16,6 +16,17 @@ public class BulletBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.position += transform.forward * bulletSpeed * Time.deltaTime;
+        
+    }
+
+    private void OnCollisionEnter(Collision thisCollision)
+    {
+        GameObject theirGameObject = thisCollision.gameObject;
+        //does the collision have the EnemyBehavior script?
+        if (theirGameObject.GetComponent<EnemyBehavior>() != null)
+        {
+            Destroy(theirGameObject);
+            Destroy(gameObject);
+        }
     }
 }
