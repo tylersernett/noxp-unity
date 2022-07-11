@@ -22,7 +22,7 @@ public class EnemyBehavior : MonoBehaviour
         if (secondsSinceLastSpawn >= secondsBetweenSpawns)
         {
             secondsSinceLastSpawn = 0;
-            Instantiate(gameObject);
+            //Instantiate(gameObject);
         }
 
         if (References.thePlayer != null) { 
