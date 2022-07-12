@@ -145,3 +145,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   healthBarPrefab: {fileID: 6696541929925730765, guid: c96397ad9a72f1940a84144fdbd1304f, type: 3}
+  deathEffectPrefab: {fileID: 6786154897442523740, guid: f3729fc80f67de54f96f6105c89942b7, type: 3}

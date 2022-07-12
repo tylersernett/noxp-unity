@@ -10,8 +10,9 @@ public class HealthSystem : MonoBehaviour
     float currentHealth;
     
     public GameObject healthBarPrefab;
-
     HealthBar myHealthBar;
+
+    public GameObject deathEffectPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,10 @@ public class HealthSystem : MonoBehaviour
         currentHealth -= damageAmount;
         if (currentHealth <= 0)
         {
+            if (deathEffectPrefab != null)
+            {
+                Instantiate(deathEffectPrefab, transform.position, transform.rotation);
+            }
             Destroy(gameObject);
         }
     }
@@ -46,6 +51,7 @@ public class HealthSystem : MonoBehaviour
 
     }
 
+    //don't create things in the OnDestroy event -- it's only for cleaning up after yourself -- unity destroys things on gameEnd
     private void OnDestroy()
     {
         if (myHealthBar != null)
