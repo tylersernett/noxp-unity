@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: affac51b0e8c09f41acf67228f8ee701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 8
+  enemySpeed: 2
   secondsBetweenSpawns: 3
 --- !u!54 &6694354242168016345
 Rigidbody:

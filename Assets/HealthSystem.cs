@@ -27,7 +27,7 @@ public class HealthSystem : MonoBehaviour
     //void: function does not return anything
     public void TakeDamage(float damageAmount)
     {
-        if (currentHealth > 0)
+        if (currentHealth > 0) //check we're actually alive first: prevent multiple explosions
         { 
             currentHealth -= damageAmount;
             if (currentHealth <= 0)

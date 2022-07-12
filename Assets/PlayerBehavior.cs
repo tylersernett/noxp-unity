@@ -8,15 +8,16 @@ public class PlayerBehavior : MonoBehaviour
                         //inspector always OVERRIDES values 
                         //so DELCARE here, then TWEAK in inspector
 
-    public GameObject bulletPrefab;
+    //public GameObject bulletPrefab;
+    public WeaponBehavior myWeapon;
 
-    public float secondsBetweenShots;
-    float secondsSinceLastShot; //DEFINE here
+    //public float secondsBetweenShots;
+    //float secondsSinceLastShot; //DEFINE here
 
     // Start is called before the first frame update
     void Start()
     {
-        secondsSinceLastShot = secondsBetweenShots; //INITIALIZE here 
+        //secondsSinceLastShot = secondsBetweenShots; //INITIALIZE here 
         References.thePlayer = gameObject;
     }
 
@@ -33,19 +34,18 @@ public class PlayerBehavior : MonoBehaviour
 
         //cursor detection
         Ray rayFromCameraToCursor = Camera.main.ScreenPointToRay(Input.mousePosition);//create ray from 'eyes' to cursor position
-        Plane playerPlane = new Plane(Vector3.up, transform.position);
+        Plane playerPlane = new Plane(Vector3.up, transform.position); //create plane same height as player. InNorml - up: vector perpendicular to plane
         playerPlane.Raycast(rayFromCameraToCursor, out float distanceFromCamera); //ouput a ray of this distance
         Vector3 cursorPosition = rayFromCameraToCursor.GetPoint(distanceFromCamera); //then get coord's of that ray
         Vector3 lookAtPosition = cursorPosition;
         transform.LookAt(lookAtPosition);//face new position
 
         //FIRING
-        secondsSinceLastShot += Time.deltaTime;
-        //if clicked, create bullet at our current position
-        if (secondsSinceLastShot >= secondsBetweenShots && Input.GetButton("Fire1"))
+        
+        if (Input.GetButton("Fire1"))
         {
-            Instantiate(bulletPrefab, transform.position + transform.forward, transform.rotation); //transform.forward = 1 unit in forward direction
-            secondsSinceLastShot = 0;
+            //tell weapon to fire
+            myWeapon.Fire(cursorPosition);
         }
     }
 }
