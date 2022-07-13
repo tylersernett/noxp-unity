@@ -8,17 +8,16 @@ public class PlayerBehavior : MonoBehaviour
                         //inspector always OVERRIDES values 
                         //so DELCARE here, then TWEAK in inspector
 
-    //public GameObject bulletPrefab;
-    public WeaponBehavior myWeapon;
+    public List<WeaponBehavior> weapons = new List<WeaponBehavior>(); //List<ScriptName> varName = new List<ScriptName>();
+    public int selectedWeaponIndex;
 
-    //public float secondsBetweenShots;
-    //float secondsSinceLastShot; //DEFINE here
+
 
     // Start is called before the first frame update
     void Start()
     {
-        //secondsSinceLastShot = secondsBetweenShots; //INITIALIZE here 
         References.thePlayer = gameObject;
+        selectedWeaponIndex = 0;
     }
 
     // Update is called once per frame
@@ -45,7 +44,14 @@ public class PlayerBehavior : MonoBehaviour
         if (Input.GetButton("Fire1"))
         {
             //tell weapon to fire
-            myWeapon.Fire(cursorPosition);
+            weapons[selectedWeaponIndex].Fire(cursorPosition);
+        }
+
+        //change weapon
+        if (Input.GetButtonDown("Fire2"))
+        {
+            selectedWeaponIndex -= 1;
+            selectedWeaponIndex = selectedWeaponIndex % weapons.Count;
         }
     }
 }

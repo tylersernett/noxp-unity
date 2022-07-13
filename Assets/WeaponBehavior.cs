@@ -13,7 +13,7 @@ public class WeaponBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        secondsSinceLastShot = secondsBetweenShots; //INITIALIZE here 
+        secondsSinceLastShot = secondsBetweenShots; //INITIALIZEj here 
     }
 
     // Update is called once per frame
@@ -36,9 +36,10 @@ public class WeaponBehavior : MonoBehaviour
 
                 //offset target position by a random amount based on inaccuracy
                 float inaccuracy = Vector3.Distance(transform.position, targetPosition) / accuracy; //distance from player to cursor / constant
-                targetPosition.x += Random.Range(-inaccuracy, inaccuracy);
-                targetPosition.z += Random.Range(-inaccuracy, inaccuracy);
-                newBullet.transform.LookAt(targetPosition);
+                Vector3 inaccuratePosition = targetPosition;
+                inaccuratePosition.x += Random.Range(-inaccuracy, inaccuracy);
+                inaccuratePosition.z += Random.Range(-inaccuracy, inaccuracy);
+                newBullet.transform.LookAt(inaccuratePosition);
                 secondsSinceLastShot = 0;
             }
         }
