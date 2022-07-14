@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2052810779436208102}
   - component: {fileID: 2052810779436208105}
+  - component: {fileID: 2374804200455939940}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -49,6 +50,19 @@ MonoBehaviour:
   accuracy: 1000
   secondsBetweenShots: 0.5
   numberOfProjectiles: 1
+--- !u!135 &2374804200455939940
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052810779436208103}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6
+  m_Center: {x: 0, y: 0, z: 0.88}
 --- !u!1 &2052810780401323460
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +74,6 @@ GameObject:
   - component: {fileID: 2052810780401323463}
   - component: {fileID: 2052810780401323465}
   - component: {fileID: 2052810780401323462}
-  - component: {fileID: 1859837873696693201}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -133,17 +146,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &1859837873696693201
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2052810780401323460}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.50000024
-  m_Height: 2.0000005
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940699}
