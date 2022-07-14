@@ -13,7 +13,7 @@ public class GuardBehavior : EnemyBehavior
 
     /* this is specifically GUARD behavior -- stuff for ALL enemies should be in EnemyBehavior*/
 
-        //Protected: can be used by children & us, but no one else
+    //Protected: can be used by children & us, but no one else
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -29,7 +29,7 @@ public class GuardBehavior : EnemyBehavior
         if (References.thePlayer != null)
         {
             Vector3 playerPosition = References.thePlayer.transform.position;
-            Vector3 vectorToPlayer = playerPosition - transform.position; //dif. b/t two positions: destination - origin
+            Vector3 vectorToPlayer = playerPosition - transform.position; //dif. b/t two positions: destination - origin, in DIRECITONAL vector form
             myLight.color = Color.white;
 
             if (alerted)
@@ -51,9 +51,13 @@ public class GuardBehavior : EnemyBehavior
                 {
                     if (Vector3.Angle(transform.forward, vectorToPlayer) <= visionConeAngle)
                     {
+                        //if there's no walls between guard and player...
+                        if (Physics.Raycast(transform.position, vectorToPlayer, vectorToPlayer.magnitude, References.wallsLayer) == false)
+                        {
+                            alerted = true;
+                            References.spawner.activated = true;
+                        }
 
-                        alerted = true;
-                        References.spawner.activated = true;
                     }
                 }
             }

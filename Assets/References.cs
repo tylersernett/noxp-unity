@@ -9,4 +9,5 @@ public class References
     public static GameObject thePlayer; 
     public static GameObject canvas;
     public static EnemySpawner spawner;
+    public static LayerMask wallsLayer = LayerMask.GetMask("Walls"); //include as many as you want
 }

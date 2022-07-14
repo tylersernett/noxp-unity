@@ -30,6 +30,7 @@ public class WeaponBehavior : MonoBehaviour
         if (secondsSinceLastShot >= secondsBetweenShots)
         {
             //ready to fire
+            References.spawner.activated = true;
             for (int i = 0; i < numberOfProjectiles; i++)
             {
                 GameObject newBullet = Instantiate(bulletPrefab, transform.position + transform.forward, transform.rotation); //transform.forward = 1 unit in forward direction (z?)
