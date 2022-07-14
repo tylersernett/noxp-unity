@@ -50,8 +50,25 @@ public class PlayerBehavior : MonoBehaviour
         //change weapon
         if (weapons.Count > 0 && Input.GetButtonDown("Fire2"))
         {
-            selectedWeaponIndex += 1;
-            selectedWeaponIndex = selectedWeaponIndex % weapons.Count; //in unity, % is remainder, NOT modulus...so find work around
+            ChangeWeaponIndex(selectedWeaponIndex + 1);
+        }
+    }
+
+    private void ChangeWeaponIndex(int index)
+    {
+        //selectedWeaponIndex += 1;
+        selectedWeaponIndex = index;
+        selectedWeaponIndex = selectedWeaponIndex % weapons.Count; //in unity, % is remainder, NOT modulus...so find work around
+
+        for (int i = 0; i < weapons.Count ; i++)
+        {
+            if (i == selectedWeaponIndex)
+            {
+                weapons[i].gameObject.SetActive(true);
+            } else
+            {
+                weapons[i].gameObject.SetActive(false);
+            }
         }
     }
 
@@ -60,11 +77,15 @@ public class PlayerBehavior : MonoBehaviour
         WeaponBehavior theirWeapon = other.GetComponentInParent<WeaponBehavior>(); //check if parent has WeaponBehavior
         if (theirWeapon != null)
         {
-            weapons.Add(theirWeapon);
-            //snap to player
+            weapons.Add(theirWeapon); //add weapon to list
+
+            //snap position to player
             theirWeapon.transform.position = transform.position;
             theirWeapon.transform.rotation = transform.rotation;
+            //then parent weapon to player so it moves with them as well
             theirWeapon.transform.SetParent(transform);
+            //make it the currently active weapon
+            ChangeWeaponIndex(weapons.Count - 1);
         }
     }
 }
