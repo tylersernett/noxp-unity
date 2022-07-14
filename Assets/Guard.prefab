@@ -201,9 +201,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5321995062710784357}
-  - component: {fileID: 5321995062710784358}
   - component: {fileID: 5321995062710784359}
   - component: {fileID: 5321995062710784352}
+  - component: {fileID: 501681809877380071}
   m_Layer: 0
   m_Name: Guard
   m_TagString: Untagged
@@ -228,24 +228,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5321995062710784358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5321995062710784353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: affac51b0e8c09f41acf67228f8ee701, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemySpeed: 2
-  visionRange: 9
-  visionConeAngle: 35
-  alerted: 0
-  myLight: {fileID: 5321995061821522195}
-  turnSpeed: 1
 --- !u!114 &5321995062710784359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,3 +259,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &501681809877380071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5321995062710784353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8740d232c6a8ce84e80176c5cc28b273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpeed: 0
+  visionRange: 9
+  visionConeAngle: 35
+  alerted: 0
+  myLight: {fileID: 5321995061821522195}
+  turnSpeed: 1
