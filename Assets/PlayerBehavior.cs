@@ -41,17 +41,30 @@ public class PlayerBehavior : MonoBehaviour
 
         //FIRING
         
-        if (Input.GetButton("Fire1"))
+        if (weapons.Count > 0 && Input.GetButton("Fire1"))
         {
             //tell weapon to fire
             weapons[selectedWeaponIndex].Fire(cursorPosition);
         }
 
         //change weapon
-        if (Input.GetButtonDown("Fire2"))
+        if (weapons.Count > 0 && Input.GetButtonDown("Fire2"))
         {
-            selectedWeaponIndex -= 1;
-            selectedWeaponIndex = selectedWeaponIndex % weapons.Count;
+            selectedWeaponIndex += 1;
+            selectedWeaponIndex = selectedWeaponIndex % weapons.Count; //in unity, % is remainder, NOT modulus...so find work around
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        WeaponBehavior theirWeapon = other.GetComponentInParent<WeaponBehavior>(); //check if parent has WeaponBehavior
+        if (theirWeapon != null)
+        {
+            weapons.Add(theirWeapon);
+            //snap to player
+            theirWeapon.transform.position = transform.position;
+            theirWeapon.transform.rotation = transform.rotation;
+            theirWeapon.transform.SetParent(transform);
         }
     }
 }
