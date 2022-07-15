@@ -16,7 +16,7 @@ public class BulletBehavior : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         secondsUntilDestroyed -= Time.deltaTime; //reduce by # seconds each update
 

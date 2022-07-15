@@ -35,8 +35,10 @@ public class RailgunBeam : BulletBehavior
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-
+        base.Update(); //this will tick down life timer
+        //make beam fade out overtime
+        myBeam.endColor = Color.Lerp(myBeam.endColor, Color.clear, 0.03f);
     }
 }

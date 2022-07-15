@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 0
-  secondsUntilDestroyed: 0
+  secondsUntilDestroyed: 2
   damage: 5
   myBeam: {fileID: 2646551488775767135}
 --- !u!120 &2646551488775767135
