@@ -11,6 +11,7 @@ public class WeaponBehavior : MonoBehaviour
     float secondsSinceLastShot;
 
     public AudioSource audioSource;
+    public float kickAmount;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class WeaponBehavior : MonoBehaviour
             //ready to fire
             References.spawner.activated = true;
             audioSource.Play();
+            References.screenshake.joltVector = transform.forward * -kickAmount;
             for (int i = 0; i < numberOfProjectiles; i++)
             {
                 GameObject newBullet = Instantiate(bulletPrefab, transform.position + transform.forward, transform.rotation); //transform.forward = 1 unit in forward direction (z?)
