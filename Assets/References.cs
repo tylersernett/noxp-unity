@@ -9,5 +9,9 @@ public class References
     public static GameObject thePlayer; 
     public static GameObject canvas;
     public static EnemySpawner spawner;
+
+    public static float maxDistanceInALevel = 1000;
+
     public static LayerMask wallsLayer = LayerMask.GetMask("Walls"); //include as many as you want
+    public static LayerMask enemiesLayer = LayerMask.GetMask("Enemies");
 }

@@ -6,11 +6,22 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     public Image filledPart;
+    public Image background;
 
     public void ShowHealthFraction(float fraction)
     {
         //scale filled part to the fraction given
         filledPart.rectTransform.localScale = new Vector3(fraction, 1, 1);
+        if (fraction < 1)
+        {
+            filledPart.enabled = true;
+            background.enabled = true;
+        } else
+        {
+            filledPart.enabled = false;
+            background.enabled = false;
+        }
+    
     }
 
     // Start is called before the first frame update
