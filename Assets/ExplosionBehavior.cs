@@ -6,11 +6,14 @@ public class ExplosionBehavior : MonoBehaviour
 {
     public float secondsToExist;
     private float secondsWeveBeenAlive;
+
+    public GameObject soundObject;
     // Start is called before the first frame update
     void Start()
     {
         secondsWeveBeenAlive = 0;
         transform.localScale = Vector3.zero; //avoid split second MAX SCALE issue when explosion spawns
+        Instantiate(soundObject, transform.position, transform.rotation);
     }
 
     // Update is called once per frame

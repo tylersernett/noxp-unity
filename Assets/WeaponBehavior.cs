@@ -10,10 +10,13 @@ public class WeaponBehavior : MonoBehaviour
     public float numberOfProjectiles;
     float secondsSinceLastShot;
 
+    public AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         secondsSinceLastShot = secondsBetweenShots; //INITIALIZEj here 
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -31,6 +34,7 @@ public class WeaponBehavior : MonoBehaviour
         {
             //ready to fire
             References.spawner.activated = true;
+            audioSource.Play();
             for (int i = 0; i < numberOfProjectiles; i++)
             {
                 GameObject newBullet = Instantiate(bulletPrefab, transform.position + transform.forward, transform.rotation); //transform.forward = 1 unit in forward direction (z?)
