@@ -7,21 +7,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5605335736739655550, guid: b7037c54d4ab02d48b441ba935012aab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 6061102805387520879, guid: b7037c54d4ab02d48b441ba935012aab, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6061102805387520879, guid: b7037c54d4ab02d48b441ba935012aab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.845519
+      value: 6.49
       objectReference: {fileID: 0}
     - target: {fileID: 6061102805387520879, guid: b7037c54d4ab02d48b441ba935012aab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.36440945
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6061102805387520879, guid: b7037c54d4ab02d48b441ba935012aab, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.428934
+      value: -11.55
       objectReference: {fileID: 0}
     - target: {fileID: 6061102805387520879, guid: b7037c54d4ab02d48b441ba935012aab, type: 3}
       propertyPath: m_LocalRotation.w
@@ -62,6 +66,14 @@ PrefabInstance:
     - target: {fileID: 7709286663424046788, guid: b7037c54d4ab02d48b441ba935012aab, type: 3}
       propertyPath: m_Name
       value: Big Death Effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 9095737243519130931, guid: b7037c54d4ab02d48b441ba935012aab, type: 3}
+      propertyPath: m_Range
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 9095737243519130931, guid: b7037c54d4ab02d48b441ba935012aab, type: 3}
+      propertyPath: m_Intensity
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7037c54d4ab02d48b441ba935012aab, type: 3}

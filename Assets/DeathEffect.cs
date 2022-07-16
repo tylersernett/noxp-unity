@@ -5,23 +5,37 @@ using UnityEngine;
 public class DeathEffect : MonoBehaviour
 {
     public float shakeAmount;
+
     AudioSource audioSource;
+
+    public Light myLight;
+    float maxLightIntensity;
+
+    public float duration;
+    float secondsLeft;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-
         References.screenshake.shakeAmount = shakeAmount;
-         
+        maxLightIntensity = myLight.intensity;
+        secondsLeft = duration;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (audioSource.isPlaying == false)
+        myLight.intensity = (secondsLeft / duration) * maxLightIntensity;
+        secondsLeft -= Time.deltaTime;
+        if (secondsLeft <= 0)
         {
-            Destroy(gameObject);
+            if (audioSource.isPlaying == false)
+            {
+                Destroy(gameObject);
+            }
         }
+        
     }
 }
