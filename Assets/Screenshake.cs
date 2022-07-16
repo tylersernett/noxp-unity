@@ -5,9 +5,12 @@ using UnityEngine;
 public class Screenshake : MonoBehaviour
 {
     Vector3 normalPosition;
+    Vector3 desiredPosition;
     public Vector3 joltVector;
+    public float shakeAmount;
 
     public float joltDecayFactor;
+    public float shakeDecayFactor;
 
     public float maxMoveSpeed;
 
@@ -25,7 +28,17 @@ public class Screenshake : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards( transform.position, normalPosition + joltVector, maxMoveSpeed* Time.deltaTime);
-        joltVector *= joltDecayFactor;
+        Vector3 shakeVector = new Vector3(GetRandomShakeAmount(), GetRandomShakeAmount(), GetRandomShakeAmount());
+        desiredPosition = normalPosition + joltVector + shakeVector;
+
+        //set position to jolted position
+        transform.position = Vector3.MoveTowards( transform.position, desiredPosition, maxMoveSpeed* Time.deltaTime);
+        joltVector *= joltDecayFactor; //decrease the joltVector each update
+        shakeAmount *= shakeDecayFactor;
+    }
+
+    float GetRandomShakeAmount()
+    {
+        return Random.Range(-shakeAmount, shakeAmount);
     }
 }

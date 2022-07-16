@@ -242,7 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   healthBarPrefab: {fileID: 6696541929925730765, guid: c96397ad9a72f1940a84144fdbd1304f, type: 3}
-  deathEffectPrefab: {fileID: 0}
+  deathEffectPrefab: {fileID: 521370238393314097, guid: e30afb3804e34954281b348cb442750a, type: 3}
 --- !u!54 &5321995062710784352
 Rigidbody:
   m_ObjectHideFlags: 0
