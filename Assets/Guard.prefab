@@ -176,7 +176,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 5321995062710784359}
   - component: {fileID: 5321995062710784352}
   - component: {fileID: 501681809877380071}
+  - component: {fileID: 6375640656865799193}
   m_Layer: 11
   m_Name: Guard
   m_TagString: Untagged
@@ -255,7 +256,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
@@ -271,9 +272,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8740d232c6a8ce84e80176c5cc28b273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 0
+  enemySpeed: 2
+  navAgent: {fileID: 0}
   visionRange: 9
   visionConeAngle: 35
   alerted: 0
   myLight: {fileID: 5321995061821522195}
   turnSpeed: 1
+--- !u!195 &6375640656865799193
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5321995062710784353}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

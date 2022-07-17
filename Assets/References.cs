@@ -12,6 +12,8 @@ public class References
 
     public static Screenshake screenshake;
 
+    public static List<NavPoint> navPoints = new List<NavPoint>(); //use new when initializing Lists
+
     public static float maxDistanceInALevel = 1000;
 
     public static LayerMask wallsLayer = LayerMask.GetMask("Walls"); //include as many as you want

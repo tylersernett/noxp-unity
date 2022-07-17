@@ -36,7 +36,7 @@ public class WeaponBehavior : MonoBehaviour
             //ready to fire
             References.spawner.activated = true;
             audioSource.Play();
-            References.screenshake.joltVector = transform.forward * -kickAmount;
+            References.screenshake.joltVector = transform.forward * kickAmount;
             for (int i = 0; i < numberOfProjectiles; i++)
             {
                 GameObject newBullet = Instantiate(bulletPrefab, transform.position + transform.forward, transform.rotation); //transform.forward = 1 unit in forward direction (z?)

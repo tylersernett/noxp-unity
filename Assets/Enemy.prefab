@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6694354242168016350}
   - component: {fileID: 6694354242168016345}
   - component: {fileID: 7059267868140911218}
+  - component: {fileID: 2303608832906084546}
   m_Layer: 11
   m_Name: Enemy
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 6694354242168016344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.65, y: 0.5, z: 2}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.7, y: 0.5, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -114,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpeed: 2
+  navAgent: {fileID: 0}
 --- !u!54 &6694354242168016345
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -126,7 +128,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
@@ -145,3 +147,25 @@ MonoBehaviour:
   maxHealth: 2
   healthBarPrefab: {fileID: 6696541929925730765, guid: c96397ad9a72f1940a84144fdbd1304f, type: 3}
   deathEffectPrefab: {fileID: 7709286663424046788, guid: b7037c54d4ab02d48b441ba935012aab, type: 3}
+--- !u!195 &2303608832906084546
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6694354242168016344}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.49999997
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

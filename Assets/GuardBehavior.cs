@@ -19,6 +19,13 @@ public class GuardBehavior : EnemyBehavior
     {
         base.Start();
         alerted = false;
+        GoToRandomNavPoint();
+    }
+
+    void GoToRandomNavPoint()
+    {
+        int randomNavPointIndex = Random.Range(0, References.navPoints.Count); //inclusive, exclusive for int. (inclusive, inclusive for float)
+        navAgent.destination = References.navPoints[randomNavPointIndex].transform.position;
     }
 
     // Update is called once per frame
@@ -40,6 +47,12 @@ public class GuardBehavior : EnemyBehavior
             }
             else
             {
+                
+                if (navAgent.remainingDistance < 0.5f)
+                {
+                    GoToRandomNavPoint();
+                }
+                
                 //Rotate
                 Vector3 lateralOffset = transform.right * Time.deltaTime * turnSpeed;
                 transform.LookAt(transform.position + transform.forward + lateralOffset);

@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyBehavior : MonoBehaviour
 {
     public float enemySpeed;
     protected Rigidbody ourRigidBody;
+    public NavMeshAgent navAgent;
 
     /* this is a parent class for ALL enemies -- all enemies use this */
     //Protected: can be used by children & us, but no one else
@@ -17,6 +19,7 @@ public class EnemyBehavior : MonoBehaviour
     protected virtual void Start()
     {
         ourRigidBody = GetComponent<Rigidbody>();
+        navAgent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -26,11 +29,14 @@ public class EnemyBehavior : MonoBehaviour
     }
 
     //protected: children can inherit
-    
+
     protected void ChasePlayer()
     {
         if (References.thePlayer != null)
         {
+            navAgent.destination = References.thePlayer.transform.position;
+            navAgent.speed = enemySpeed;
+            /*
             Vector3 playerPosition = References.thePlayer.transform.position;
             Vector3 vectorToPlayer = playerPosition - transform.position; //dif. b/t two positions: destination - origin
 
@@ -38,6 +44,7 @@ public class EnemyBehavior : MonoBehaviour
             ourRigidBody.velocity = vectorToPlayer.normalized * enemySpeed;//ourRigidBody.velocity = some kind of vector going towards player
             Vector3 playerPositionAtOurHeight = new Vector3(playerPosition.x, transform.position.y, playerPosition.z); //enemy was tilting before -- this locks the y perspective
             transform.LookAt(playerPositionAtOurHeight);
+            */
         }
     }
 
