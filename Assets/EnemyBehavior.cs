@@ -15,6 +15,16 @@ public class EnemyBehavior : MonoBehaviour
     //virtual -- CAN be overridden by children. If they don't override, then parent code is used.
     //void: function returns nothing
 
+    protected void OnEnable()
+    {
+        References.allEnemies.Add(this);
+    }
+
+    protected void OnDisable()
+    {
+        References.allEnemies.Remove(this);
+    }
+
     // Start is called before the first frame update
     protected virtual void Start()
     {

@@ -68,7 +68,7 @@ public class GuardBehavior : EnemyBehavior
                         if (Physics.Raycast(transform.position, vectorToPlayer, vectorToPlayer.magnitude, References.wallsLayer) == false)
                         {
                             alerted = true;
-                            References.spawner.activated = true;
+                            References.levelManager.alarmSounded = true;
                         }
 
                     }

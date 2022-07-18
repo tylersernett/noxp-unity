@@ -34,7 +34,7 @@ public class WeaponBehavior : MonoBehaviour
         if (secondsSinceLastShot >= secondsBetweenShots)
         {
             //ready to fire
-            References.spawner.activated = true;
+            References.levelManager.alarmSounded = true;
             audioSource.Play();
             References.screenshake.joltVector = transform.forward * kickAmount;
             for (int i = 0; i < numberOfProjectiles; i++)

@@ -8,7 +8,10 @@ public class References
     //points to entire player object (could also reference the specific behavior script...initialize '= this' in script)
     public static GameObject thePlayer; 
     public static GameObject canvas;
-    public static EnemySpawner spawner;
+    public static List<EnemySpawner> spawners = new List<EnemySpawner>();
+    public static List<EnemyBehavior> allEnemies = new List<EnemyBehavior>();
+    public static LevelManager levelManager;
+
 
     public static Screenshake screenshake;
 
