@@ -343,7 +343,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1020123185208141064, guid: 355397fa327e0284898cb922cad601c0, type: 3}
       propertyPath: enemiesToSpawn
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1020123185208141064, guid: 355397fa327e0284898cb922cad601c0, type: 3}
       propertyPath: secondsBetweenSpawns
@@ -3192,6 +3192,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1020123185208141064, guid: 355397fa327e0284898cb922cad601c0, type: 3}
+      propertyPath: enemiesToSpawn
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1020123185208141064, guid: 355397fa327e0284898cb922cad601c0, type: 3}
       propertyPath: secondsBetweenSpawns
       value: 1
