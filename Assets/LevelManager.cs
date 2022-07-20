@@ -11,6 +11,9 @@ public class LevelManager : MonoBehaviour
     public float secondsBeforeNextLevel;
     public float graceTimeAtEndOfLevel;
 
+    public float secondsBeforeShowingDeathMenu;
+    bool shownDeathMenu;
+
     private void Awake()
     {
         References.levelManager = this;
@@ -20,6 +23,7 @@ public class LevelManager : MonoBehaviour
     {
         alarmSounded = false;
         secondsBeforeNextLevel = graceTimeAtEndOfLevel;
+        shownDeathMenu = false;
     }
 
     // Update is called once per frame
@@ -40,6 +44,16 @@ public class LevelManager : MonoBehaviour
         else
         {
             secondsBeforeNextLevel = graceTimeAtEndOfLevel;
+        }
+
+        if (References.thePlayer == null && shownDeathMenu == false)
+        {
+            secondsBeforeShowingDeathMenu -= Time.deltaTime;
+            if (secondsBeforeShowingDeathMenu <= 0)
+            {
+                References.canvas.ShowMainMenu();
+                shownDeathMenu = true;
+            }
         }
     }
 }

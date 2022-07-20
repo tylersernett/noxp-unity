@@ -111,4 +111,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondsToExist: 0.5
+  damage: 2
   soundObject: {fileID: 7638955043809615075, guid: 036adcfcc6637784e824c30b90ff3b39, type: 3}

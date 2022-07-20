@@ -58,17 +58,5 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
-    protected void OnCollisionEnter(Collision thisCollision)
-    {
-        GameObject theirGameObject = thisCollision.gameObject;
-        //does the collision have the PlayerBehavior script?
-        if (theirGameObject.GetComponent<PlayerBehavior>() != null)
-        {
-            HealthSystem theirHealthSystem = theirGameObject.GetComponent<HealthSystem>();
-            if (theirHealthSystem != null)
-            {
-                theirHealthSystem.TakeDamage(1);
-            }
-        }
-    }
+    
 }

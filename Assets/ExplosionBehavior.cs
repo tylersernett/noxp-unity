@@ -6,6 +6,7 @@ public class ExplosionBehavior : MonoBehaviour
 {
     public float secondsToExist;
     private float secondsWeveBeenAlive;
+    public float damage;
 
     public GameObject soundObject;
     // Start is called before the first frame update
@@ -42,7 +43,7 @@ public class ExplosionBehavior : MonoBehaviour
         HealthSystem theirHealthSystem = collision.gameObject.GetComponent<HealthSystem>();
         if (theirHealthSystem != null)
         {
-            theirHealthSystem.TakeDamage(10);
+            theirHealthSystem.TakeDamage(damage);
         } 
     }
 }

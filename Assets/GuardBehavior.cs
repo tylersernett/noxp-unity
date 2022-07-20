@@ -11,6 +11,8 @@ public class GuardBehavior : EnemyBehavior
     public Light myLight;
     public float turnSpeed;
     public WeaponBehavior myWeapon;
+    public float reactionTime;
+    float secondsSeeingPlayer;
 
     /* this is specifically GUARD behavior -- stuff for ALL enemies should be in EnemyBehavior*/
 
@@ -21,6 +23,7 @@ public class GuardBehavior : EnemyBehavior
         base.Start();
         alerted = false;
         GoToRandomNavPoint();
+        secondsSeeingPlayer = 0;
     }
 
     void GoToRandomNavPoint()
@@ -81,8 +84,16 @@ public class GuardBehavior : EnemyBehavior
                 myLight.color = Color.red;
                 if (CanSeePlayer())
                 {
-                    transform.LookAt(PlayerPosition());
-                    myWeapon.Fire(PlayerPosition());
+                    secondsSeeingPlayer += Time.deltaTime;
+                    transform.LookAt(PlayerPosition()); //look at player before we're ready to fire
+                    if (secondsSeeingPlayer >= reactionTime)
+                    {
+                        myWeapon.Fire(PlayerPosition());
+                    }
+                }
+                else
+                {
+                    secondsSeeingPlayer = 0;
                 }
             }
             else

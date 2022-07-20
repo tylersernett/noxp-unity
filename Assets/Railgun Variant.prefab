@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2052810779436208103, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
       propertyPath: m_Name
-      value: Railgun
+      value: Railgun Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2052810779436208103, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
       propertyPath: m_IsActive
@@ -86,6 +86,10 @@ PrefabInstance:
     - target: {fileID: 2052810780401323463, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749972649459645387, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_Volume
+      value: 0.479
       objectReference: {fileID: 0}
     - target: {fileID: 2749972649459645387, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
       propertyPath: m_audioClip

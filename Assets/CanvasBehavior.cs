@@ -13,11 +13,12 @@ public class CanvasBehavior : MonoBehaviour
     public GameObject currentMenu;
     public GameObject creditsMenu;
 
+
     // Awake happens before Start()
     void Awake()
     {
         //initiate references in awake.
-        References.canvas = gameObject;
+        References.canvas = this;
         currentMenu = null;
     }
 
@@ -35,6 +36,11 @@ public class CanvasBehavior : MonoBehaviour
                 ShowMenu(mainMenu);
             }
         }
+    }
+
+    public void ShowMainMenu()
+    {
+        ShowMenu(mainMenu);
     }
 
     public void HideMenu()
