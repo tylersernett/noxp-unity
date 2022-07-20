@@ -10,6 +10,7 @@ public class GuardBehavior : EnemyBehavior
     public bool alerted;
     public Light myLight;
     public float turnSpeed;
+    public WeaponBehavior myWeapon;
 
     /* this is specifically GUARD behavior -- stuff for ALL enemies should be in EnemyBehavior*/
 
@@ -28,15 +29,49 @@ public class GuardBehavior : EnemyBehavior
         navAgent.destination = References.navPoints[randomNavPointIndex].transform.position;
     }
 
+    protected bool CanSeePlayer()
+    {
+        if (References.thePlayer == null)
+        {
+            return false;
+        }
+        Vector3 vectorToPlayer = PlayerPosition() - transform.position;
+        if (Physics.Raycast(
+            transform.position,
+            vectorToPlayer,
+            out RaycastHit hitInfo,
+            vectorToPlayer.magnitude, //only go as far as player
+            References.wallsLayer
+        ))
+        {
+            //ray hit wall before player -- can't see player
+            return false;
+        }
+        else
+        {
+            //ray hit player before any walls - can see player
+            return true;
+        }
+
+
+    }
+
+    protected Vector3 PlayerPosition()
+    {
+        return References.thePlayer.transform.position;
+    }
+
     // Update is called once per frame
     protected override void Update()
     {
-
+        if (References.levelManager.alarmSounded)
+        {
+            alerted = true;
+        }
 
         if (References.thePlayer != null)
         {
-            Vector3 playerPosition = References.thePlayer.transform.position;
-            Vector3 vectorToPlayer = playerPosition - transform.position; //dif. b/t two positions: destination - origin, in DIRECITONAL vector form
+            Vector3 vectorToPlayer = PlayerPosition() - transform.position; //dif. b/t two positions: destination - origin, in DIRECITONAL vector form
             myLight.color = Color.white;
 
             if (alerted)
@@ -44,23 +79,22 @@ public class GuardBehavior : EnemyBehavior
                 //follow the player
                 ChasePlayer();
                 myLight.color = Color.red;
+                if (CanSeePlayer())
+                {
+                    transform.LookAt(PlayerPosition());
+                    myWeapon.Fire(PlayerPosition());
+                }
             }
             else
             {
-                
+
                 if (navAgent.remainingDistance < 0.5f)
                 {
                     GoToRandomNavPoint();
                 }
-                
-                //Rotate
-                Vector3 lateralOffset = transform.right * Time.deltaTime * turnSpeed;
-                transform.LookAt(transform.position + transform.forward + lateralOffset);
-                //walk in circle
-                ourRigidBody.velocity = transform.forward * enemySpeed;
 
                 //check if we can see player
-                if (Vector3.Distance(transform.position, playerPosition) <= visionRange) //first check distance, then angle
+                if (Vector3.Distance(transform.position, PlayerPosition()) <= visionRange) //first check distance, then angle
                 {
                     if (Vector3.Angle(transform.forward, vectorToPlayer) <= visionConeAngle)
                     {

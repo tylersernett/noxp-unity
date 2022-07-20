@@ -35,14 +35,13 @@ public class BulletBehavior : MonoBehaviour
     {
         GameObject theirGameObject = thisCollision.gameObject;
         //does the collision have the EnemyBehavior script?
-        if (theirGameObject.GetComponent<EnemyBehavior>() != null)
+
+        HealthSystem theirHealthSystem = theirGameObject.GetComponent<HealthSystem>();
+        if (theirHealthSystem != null)
         {
-            HealthSystem theirHealthSystem = theirGameObject.GetComponent<HealthSystem>();
-            if (theirHealthSystem != null)
-            { 
-                theirHealthSystem.TakeDamage(damage);
-            }
-            Destroy(gameObject); //destroy bullet itself
+            theirHealthSystem.TakeDamage(damage);
         }
+        Destroy(gameObject); //destroy bullet itself
+
     }
 }
