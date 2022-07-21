@@ -26,6 +26,19 @@ public class WeaponBehavior : MonoBehaviour
         secondsSinceLastShot += Time.deltaTime;
     }
 
+    public void BePickedUpByPlayer()
+    {
+        References.thePlayer.weapons.Add(this); //add weapon to list
+
+        //snap position to player
+        transform.position = References.thePlayer.transform.position;
+        transform.rotation = References.thePlayer.transform.rotation;
+        //then parent weapon to player so it moves with them as well
+        transform.SetParent(References.thePlayer.transform);
+        //make it the currently active weapon
+        References.thePlayer.SelectLatestWeapon();
+    }
+
     public void Fire(Vector3 targetPosition)
     {
         //FIRING

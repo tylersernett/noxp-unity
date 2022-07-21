@@ -16,7 +16,7 @@ public class PlayerBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        References.thePlayer = gameObject;
+        References.thePlayer = this;
         selectedWeaponIndex = 0;
     }
 
@@ -52,6 +52,34 @@ public class PlayerBehavior : MonoBehaviour
         {
             ChangeWeaponIndex(selectedWeaponIndex + 1);
         }
+
+        //use item
+        if (Input.GetButtonDown("Use"))
+        {
+            //use the NEAREST usable
+            Useable nearestUseable = null;
+            float nearestDistance = 3; //maximum pickup distance 
+            foreach (Useable thisUseable in References.useables)
+            {
+                float thisDistance = Vector3.Distance(transform.position, thisUseable.transform.position);
+                if (thisDistance <= nearestDistance)
+                {
+                    nearestUseable = thisUseable;
+                    nearestDistance = thisDistance;
+                }
+            }
+            if (nearestUseable != null)
+            {
+                nearestUseable.Use();
+            }
+        }
+
+        
+    }
+
+    public void SelectLatestWeapon()
+    {
+        ChangeWeaponIndex(weapons.Count - 1);
     }
 
     private void ChangeWeaponIndex(int index)
@@ -72,20 +100,12 @@ public class PlayerBehavior : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         WeaponBehavior theirWeapon = other.GetComponentInParent<WeaponBehavior>(); //check if parent has WeaponBehavior
         if (theirWeapon != null)
         {
-            weapons.Add(theirWeapon); //add weapon to list
-
-            //snap position to player
-            theirWeapon.transform.position = transform.position;
-            theirWeapon.transform.rotation = transform.rotation;
-            //then parent weapon to player so it moves with them as well
-            theirWeapon.transform.SetParent(transform);
-            //make it the currently active weapon
-            ChangeWeaponIndex(weapons.Count - 1);
+            theirWeapon.BePickedUpByPlayer();
         }
-    }
+    }*/
 }

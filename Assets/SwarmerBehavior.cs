@@ -9,10 +9,11 @@ public class SwarmerBehavior : EnemyBehavior
 
     protected void OnCollisionEnter(Collision thisCollision)
     {
-        GameObject theirGameObject = thisCollision.gameObject;
+        GameObject theirGameObject = thisCollision.gameObject;//.GetComponent<PlayerBehavior>;
+        PlayerBehavior theirBehavior = theirGameObject.GetComponent<PlayerBehavior>();
 
         //does the collision have the PlayerBehavior script?
-        if (theirGameObject == References.thePlayer)
+        if (theirBehavior != null)
         {
             //create an explosion, then destroy self
             Instantiate(explosionPrefab, transform.position, transform.rotation);

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2052810779436208105}
   - component: {fileID: 2374804200455939940}
   - component: {fileID: 2749972649459645387}
+  - component: {fileID: 7358150662402562390}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -51,6 +52,8 @@ MonoBehaviour:
   accuracy: 1000
   secondsBetweenShots: 0.5
   numberOfProjectiles: 1
+  audioSource: {fileID: 0}
+  kickAmount: 0
 --- !u!135 &2374804200455939940
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -160,6 +163,33 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7358150662402562390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052810779436208103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606d21884cb73f4798be1f55763a590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whenUsed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2052810779436208105}
+        m_TargetAssemblyTypeName: WeaponBehavior, Assembly-CSharp
+        m_MethodName: BePickedUpByPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2052810780401323460
 GameObject:
   m_ObjectHideFlags: 0

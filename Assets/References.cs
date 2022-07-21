@@ -6,10 +6,11 @@ public class References
 {
     //kind of like global.vars
     //points to entire player object (could also reference the specific behavior script...initialize '= this' in script)
-    public static GameObject thePlayer; 
+    public static PlayerBehavior thePlayer; 
     public static CanvasBehavior canvas;
     public static List<EnemySpawner> spawners = new List<EnemySpawner>();
     public static List<EnemyBehavior> allEnemies = new List<EnemyBehavior>();
+    public static List<Useable> useables = new List<Useable>();
     public static LevelManager levelManager;
 
 
