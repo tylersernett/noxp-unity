@@ -322,7 +322,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 501681809877380071}
         m_TargetAssemblyTypeName: GuardBehavior, Assembly-CSharp
-        m_MethodName: GetKnockedOut
+        m_MethodName: KnockoutAttempt
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
