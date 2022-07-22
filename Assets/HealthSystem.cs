@@ -23,6 +23,10 @@ public class HealthSystem : MonoBehaviour
         myHealthBar = healthBarObject.GetComponent<HealthBar>();//fetch healthbar component from the object
     }
 
+    public void KillMe()
+    {
+        TakeDamage(currentHealth);
+    }
 
     //void: function does not return anything
     public void TakeDamage(float damageAmount)

@@ -64,6 +64,11 @@ public class GuardBehavior : EnemyBehavior
         return References.thePlayer.transform.position;
     }
 
+    public void GetKnockedOut()
+    {
+        GetComponent<HealthSystem>().KillMe();
+    }
+
     // Update is called once per frame
     protected override void Update()
     {

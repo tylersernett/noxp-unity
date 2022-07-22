@@ -58,7 +58,7 @@ public class PlayerBehavior : MonoBehaviour
         {
             //use the NEAREST usable
             Useable nearestUseable = null;
-            float nearestDistance = 3; //maximum pickup distance 
+            float nearestDistance = 2; //maximum pickup distance 
             foreach (Useable thisUseable in References.useables)
             {
                 float thisDistance = Vector3.Distance(transform.position, thisUseable.transform.position);

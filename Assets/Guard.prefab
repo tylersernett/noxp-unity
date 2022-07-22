@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 501681809877380071}
   - component: {fileID: 5321995062710784352}
   - component: {fileID: 6375640656865799193}
+  - component: {fileID: 1583659375255904999}
   m_Layer: 11
   m_Name: Guard
   m_TagString: Untagged
@@ -304,6 +305,34 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1583659375255904999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5321995062710784353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606d21884cb73f4798be1f55763a590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whenUsed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 501681809877380071}
+        m_TargetAssemblyTypeName: GuardBehavior, Assembly-CSharp
+        m_MethodName: GetKnockedOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  canBeReused: 0
 --- !u!1001 &4539016889921720711
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -325,7 +354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6423005546580515430, guid: cbc556a8aed33a5459f0036531ebb080, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.12
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 6423005546580515430, guid: cbc556a8aed33a5459f0036531ebb080, type: 3}
       propertyPath: m_LocalRotation.w
@@ -358,6 +387,26 @@ PrefabInstance:
     - target: {fileID: 6423005546580515431, guid: cbc556a8aed33a5459f0036531ebb080, type: 3}
       propertyPath: m_Name
       value: Uzi Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423005547309635654, guid: cbc556a8aed33a5459f0036531ebb080, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167417829300121163, guid: cbc556a8aed33a5459f0036531ebb080, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167417829300121163, guid: cbc556a8aed33a5459f0036531ebb080, type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7325925931575472868, guid: cbc556a8aed33a5459f0036531ebb080, type: 3}
+      propertyPath: m_Radius
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7325925931575472868, guid: cbc556a8aed33a5459f0036531ebb080, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbc556a8aed33a5459f0036531ebb080, type: 3}
