@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        alarmSounded = false;
+        References.alarmManager.SetUpLevel(3);
         secondsBeforeNextLevel = graceTimeAtEndOfLevel;
         shownDeathMenu = false;
     }

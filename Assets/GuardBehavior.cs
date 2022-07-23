@@ -66,16 +66,17 @@ public class GuardBehavior : EnemyBehavior
 
     public void KnockoutAttempt()
     {
-        if (References.levelManager.alarmSounded == false)
+        if (References.alarmManager.AlarmHasSounded() == false)
         {
             GetComponent<HealthSystem>().KillMe();
+            References.alarmManager.RaiseAlertLevel();
         }
     }
 
     // Update is called once per frame
     protected override void Update()
     {
-        if (References.levelManager.alarmSounded)
+        if (References.alarmManager.AlarmHasSounded())
         {
             alerted = true;
         }
@@ -121,7 +122,7 @@ public class GuardBehavior : EnemyBehavior
                         if (Physics.Raycast(transform.position, vectorToPlayer, vectorToPlayer.magnitude, References.wallsLayer) == false)
                         {
                             alerted = true;
-                            References.levelManager.alarmSounded = true;
+                            References.alarmManager.SoundTheAlarm();
                         }
 
                     }

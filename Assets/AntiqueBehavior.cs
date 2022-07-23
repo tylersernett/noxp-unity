@@ -8,6 +8,7 @@ public class AntiqueBehavior : MonoBehaviour
     public void BeCollected()
     {
         References.thePlayer.IncreaseScore(1);
+        References.alarmManager.RaiseAlertLevel();
         Destroy(gameObject);
     }
     // Start is called before the first frame update

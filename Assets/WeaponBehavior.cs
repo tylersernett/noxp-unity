@@ -37,6 +37,7 @@ public class WeaponBehavior : MonoBehaviour
         transform.SetParent(References.thePlayer.transform);
         //make it the currently active weapon
         References.thePlayer.SelectLatestWeapon();
+        References.alarmManager.RaiseAlertLevel();
     }
 
     public void Fire(Vector3 targetPosition)
@@ -47,7 +48,7 @@ public class WeaponBehavior : MonoBehaviour
         if (secondsSinceLastShot >= secondsBetweenShots)
         {
             //ready to fire
-            References.levelManager.alarmSounded = true;
+            References.alarmManager.SoundTheAlarm();
             audioSource.Play();
             References.screenshake.joltVector = transform.forward * kickAmount;
             for (int i = 0; i < numberOfProjectiles; i++)

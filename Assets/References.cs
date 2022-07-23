@@ -12,7 +12,7 @@ public class References
     public static List<EnemyBehavior> allEnemies = new List<EnemyBehavior>();
     public static List<Useable> useables = new List<Useable>();
     public static LevelManager levelManager;
-
+    public static AlarmManager alarmManager;
 
     public static Screenshake screenshake;
 
