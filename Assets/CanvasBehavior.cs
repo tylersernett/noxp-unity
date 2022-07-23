@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,7 +13,7 @@ public class CanvasBehavior : MonoBehaviour
     public GameObject mainMenu;
     public GameObject currentMenu;
     public GameObject creditsMenu;
-
+    public TextMeshProUGUI scoreText;
 
     // Awake happens before Start()
     void Awake()

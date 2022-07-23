@@ -11,13 +11,19 @@ public class PlayerBehavior : MonoBehaviour
     public List<WeaponBehavior> weapons = new List<WeaponBehavior>(); //List<ScriptName> varName = new List<ScriptName>();
     public int selectedWeaponIndex;
 
-
+    public int score;
 
     // Start is called before the first frame update
     void Start()
     {
         References.thePlayer = this;
         selectedWeaponIndex = 0;
+    }
+
+    public void IncreaseScore(int amount )
+    {
+        score += amount;
+        References.canvas.scoreText.text = score.ToString();
     }
 
     // Update is called once per frame
