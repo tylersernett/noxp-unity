@@ -6,7 +6,10 @@ public class LevelGenerator : MonoBehaviour
 {
 
     public List<GameObject> possibleChunkPrefabs;
-    public List<GameObject> thingsToPutOnPlinths;
+    public List<GameObject> WeaponPrefabs;
+    public GameObject antiquePrefab;
+
+    public float fractionOfPlinthsToHaveAntiques;
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +25,26 @@ public class LevelGenerator : MonoBehaviour
             possibleChunkPrefabs.Remove(randomChunkType);
         }
 
+        int numberOfThingsToPlace = References.plinths.Count;
+        int numberOfAntiquesToPlace = Mathf.RoundToInt(numberOfThingsToPlace * fractionOfPlinthsToHaveAntiques);
+        
+
         foreach(Plinth plinth in References.plinths)
         {
-            int randomThingIndex = Random.Range(0, thingsToPutOnPlinths.Count);
-            GameObject randomThingType = thingsToPutOnPlinths[randomThingIndex];
-            GameObject newThing = Instantiate(randomThingType);
+            GameObject thingToCreate;
+            float chanceOfAntique = numberOfAntiquesToPlace / numberOfThingsToPlace;
+            if (Random.value <= chanceOfAntique)
+            {
+                //place an antique 
+                thingToCreate = antiquePrefab;
+            } else
+            {
+                //place a weapon
+                int randomThingIndex = Random.Range(0, WeaponPrefabs.Count);
+                thingToCreate = WeaponPrefabs[randomThingIndex];
+            }
+            numberOfThingsToPlace--;
+            GameObject newThing = Instantiate(thingToCreate);
             plinth.AssignItem(newThing);
             //thingsToPutOnPlinths.Remove(randomThingType);
         }
