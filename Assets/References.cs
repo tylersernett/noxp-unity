@@ -11,6 +11,7 @@ public class References
     public static List<EnemySpawner> spawners = new List<EnemySpawner>();
     public static List<EnemyBehavior> allEnemies = new List<EnemyBehavior>();
     public static List<Useable> useables = new List<Useable>();
+    public static List<Plinth> plinths = new List<Plinth>();
     public static LevelManager levelManager;
     public static AlarmManager alarmManager;
 

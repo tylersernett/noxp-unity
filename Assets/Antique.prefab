@@ -62,6 +62,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   canBeReused: 0
+  displayName: Antique
 --- !u!114 &596223918252305896
 MonoBehaviour:
   m_ObjectHideFlags: 0

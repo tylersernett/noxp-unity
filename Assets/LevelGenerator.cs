@@ -6,6 +6,7 @@ public class LevelGenerator : MonoBehaviour
 {
 
     public List<GameObject> possibleChunkPrefabs;
+    public List<GameObject> thingsToPutOnPlinths;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,15 @@ public class LevelGenerator : MonoBehaviour
             Instantiate(randomChunkType, spawnPosition, Quaternion.identity);
             //.identity: default rotation, analog to vector3.zero
             possibleChunkPrefabs.Remove(randomChunkType);
+        }
+
+        foreach(Plinth plinth in References.plinths)
+        {
+            int randomThingIndex = Random.Range(0, thingsToPutOnPlinths.Count);
+            GameObject randomThingType = thingsToPutOnPlinths[randomThingIndex];
+            GameObject newThing = Instantiate(randomThingType);
+            plinth.AssignItem(newThing);
+            //thingsToPutOnPlinths.Remove(randomThingType);
         }
     }
 

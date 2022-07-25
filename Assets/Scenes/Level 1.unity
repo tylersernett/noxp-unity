@@ -654,6 +654,13 @@ MonoBehaviour:
   - {fileID: 4297826450916213005, guid: b919938714483274a9caee377abfb17f, type: 3}
   - {fileID: 300255393599894317, guid: 7962f2c4bfc4db249b6104d91d889038, type: 3}
   - {fileID: 8032366729580367984, guid: b702798ba2795ab49a5b8d21e8f25c60, type: 3}
+  thingsToPutOnPlinths:
+  - {fileID: 6423005546580515431, guid: cbc556a8aed33a5459f0036531ebb080, type: 3}
+  - {fileID: 7246699579557577162, guid: f9eaed77ac4548d45befac61643a7f85, type: 3}
+  - {fileID: 2234117896082555211, guid: 4e937d62113fca340ade0f7f9b112d8c, type: 3}
+  - {fileID: 3289497187534478819, guid: 37d3a618816baf344bb0358c46c62c8b, type: 3}
+  - {fileID: 3289497187534478819, guid: 37d3a618816baf344bb0358c46c62c8b, type: 3}
+  - {fileID: 3289497187534478819, guid: 37d3a618816baf344bb0358c46c62c8b, type: 3}
 --- !u!4 &773162270
 Transform:
   m_ObjectHideFlags: 0
@@ -1563,6 +1570,10 @@ PrefabInstance:
     - target: {fileID: 8032366729580367984, guid: b702798ba2795ab49a5b8d21e8f25c60, type: 3}
       propertyPath: m_Name
       value: Chunk - Empty
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032366729580367984, guid: b702798ba2795ab49a5b8d21e8f25c60, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b702798ba2795ab49a5b8d21e8f25c60, type: 3}

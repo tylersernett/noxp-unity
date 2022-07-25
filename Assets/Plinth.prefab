@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2667212809592106284}
   - component: {fileID: 8195219374601727205}
+  - component: {fileID: 7298460825389295639}
   m_Layer: 0
   m_Name: Plinth
   m_TagString: Untagged
@@ -33,6 +34,7 @@ Transform:
   - {fileID: 6597307260227884156}
   - {fileID: 2780508925541322698}
   - {fileID: 8118001765736788434}
+  - {fileID: 3130844784958558078}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -50,6 +52,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unalarmedObject: {fileID: 6231094339977933877}
   alarmedObject: {fileID: 4088990899250385278}
+--- !u!114 &7298460825389295639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333254500859068233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d2af587bc00fb48959696f4cbea888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myLabel: {fileID: 873575468262444757}
+  spotForItem: {fileID: 3130844784958558078}
+--- !u!1 &409979999636325791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3130844784958558078}
+  m_Layer: 0
+  m_Name: Spot For Item
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3130844784958558078
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409979999636325791}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.4, z: -0.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2667212809592106284}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3808859568953439978
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,7 +495,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SHOTGUN
+  m_text: name not set
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -475,7 +522,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.55
+  m_fontSize: 0.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

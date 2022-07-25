@@ -95,5 +95,9 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 954c8c14f50fc124a8b2e63560666ecb, type: 3}
+    - target: {fileID: 7358150662402562390, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: displayName
+      value: Railgun
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}

@@ -7,6 +7,7 @@ public class Useable : MonoBehaviour
 {
     public UnityEvent whenUsed;
     public bool canBeReused; //bools default to false
+    public string displayName;
 
     public void Use()
     {
