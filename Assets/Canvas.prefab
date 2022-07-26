@@ -515,6 +515,7 @@ MonoBehaviour:
   maxAlertLevel: 0
   emptyPip: {fileID: 21300000, guid: bc0d7658a319fc84a869d1a0fae5cb73, type: 3}
   filledPip: {fileID: 21300000, guid: c6a336da140b12b45b67fba29b021639, type: 3}
+  alarmSound: {fileID: 0}
 --- !u!82 &6052850779325598638
 AudioSource:
   m_ObjectHideFlags: 0
@@ -527,7 +528,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2514cdd84aaa65f488115e0198d624d3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.27
+  m_Volume: 0.018
   m_Pitch: 1
   Loop: 1
   Mute: 0

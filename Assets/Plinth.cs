@@ -9,6 +9,10 @@ public class Plinth : MonoBehaviour
     public TextMeshProUGUI myLabel;
     public Transform spotForItem;
 
+    public GameObject cage;
+
+    public float secondsToLock;
+
     private void OnEnable()
     {
         References.plinths.Add(this);
@@ -25,5 +29,23 @@ public class Plinth : MonoBehaviour
         myLabel.text = myUseable.displayName;
         myUseable.transform.position = spotForItem.transform.position;
         myUseable.transform.rotation = spotForItem.transform.rotation;
+    }
+
+    private void Update()
+    {
+        if (secondsToLock > 0 && References.alarmManager.AlarmHasSounded())
+        {
+            secondsToLock -= Time.deltaTime;
+            if (secondsToLock <= 0)
+            {
+                cage.SetActive(true);
+                myLabel.text = "ALARM";
+                //if the plinth item is still on the plint, destroy it
+                if (myUseable != null && myUseable.enabled)
+                {
+                    Destroy(myUseable.gameObject);
+                }
+            }
+        }
     }
 }

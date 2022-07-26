@@ -14,9 +14,14 @@ public class PlayerBehavior : MonoBehaviour
     public int score;
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         References.thePlayer = this;
+    }
+
+    void Start()
+    {
+        
         selectedWeaponIndex = 0;
     }
 
