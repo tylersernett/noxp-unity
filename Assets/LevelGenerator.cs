@@ -4,19 +4,28 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
+    public string nextLevelName;
+    public int alarmLevels;
 
     public List<GameObject> possibleChunkPrefabs;
     public List<GameObject> WeaponPrefabs;
     public GameObject antiquePrefab;
-
     public GameObject guardPrefab;
+
 
     public float fractionOfPlinthsToHaveAntiques;
     public int numberOfGuardsToCreate;
     public int numberOfSpawnersToCreate;
+
+    private void Awake()
+    {
+        References.levelGenerator = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+
         for (int i = 0; i < 3; i++)
         {
             //get a random chunk type
@@ -78,6 +87,7 @@ public class LevelGenerator : MonoBehaviour
             int randomIndex = Random.Range(0, References.spawners.Count);
             Destroy(References.spawners[randomIndex].gameObject);
         }
+        References.alarmManager.SetUpLevel(alarmLevels);
     }
 
     // Update is called once per frame

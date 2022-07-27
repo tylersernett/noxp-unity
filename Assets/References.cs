@@ -14,6 +14,10 @@ public class References
     public static List<Plinth> plinths = new List<Plinth>();
     public static LevelManager levelManager;
     public static AlarmManager alarmManager;
+    public static LevelGenerator levelGenerator;
+
+
+    public static Persistent essentials;
 
     public static Screenshake screenshake;
 

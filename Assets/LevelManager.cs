@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public bool alarmSounded;
-    public SceneAsset nextLevel;
+    public string firstLevelName;
     public float secondsBeforeNextLevel;
     public float graceTimeAtEndOfLevel;
 
@@ -21,9 +21,17 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        References.alarmManager.SetUpLevel(3);
+        SceneManager.LoadScene(firstLevelName);
+        
         secondsBeforeNextLevel = graceTimeAtEndOfLevel;
         shownDeathMenu = false;
+    }
+
+    public void StartNewGame()
+    {
+        SceneManager.LoadScene("Startup");
+        Destroy(References.essentials.gameObject);
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -35,10 +43,13 @@ public class LevelManager : MonoBehaviour
             //wait a bit
             secondsBeforeNextLevel -= Time.deltaTime;
 
+            //stop alarm
+            References.alarmManager.StopTheAlarm();
+
             if (secondsBeforeNextLevel <= 0)
             {
                 //then go to the next level
-                SceneManager.LoadScene(nextLevel.name);
+                SceneManager.LoadScene(References.levelGenerator.nextLevelName);
             }
         }
         else

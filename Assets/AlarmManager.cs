@@ -41,6 +41,11 @@ public class AlarmManager : MonoBehaviour
 
     public void SetUpLevel(int desiredMaxAlertLevel)
     {
+        for (int i = 0; i< alertPips.Count; i++)
+        {
+            Destroy(alertPips[i].gameObject);
+        }
+        alertPips.Clear();
         maxAlertLevel = desiredMaxAlertLevel;
         //for each alert level, create a pip and store them in a list we can access later
         for (int i = 0; i < maxAlertLevel; i++)
@@ -60,6 +65,12 @@ public class AlarmManager : MonoBehaviour
     public void SoundTheAlarm()
     {
         alertLevel = maxAlertLevel;
+        UpdatePips();
+    }
+
+    public void StopTheAlarm()
+    {
+        alertLevel = 0;
         UpdatePips();
     }
 
