@@ -54,6 +54,7 @@ MonoBehaviour:
   numberOfProjectiles: 1
   audioSource: {fileID: 0}
   kickAmount: 0
+  ammo: 20
 --- !u!135 &2374804200455939940
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -190,6 +191,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  canBeReused: 0
+  displayName: 
 --- !u!1 &2052810780401323460
 GameObject:
   m_ObjectHideFlags: 0

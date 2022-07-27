@@ -33,6 +33,11 @@ public class Plinth : MonoBehaviour
 
     private void Update()
     {
+        if (myUseable!= null && myUseable.enabled == false)
+        {
+            //don't allow plinth to disable items the player has already picked up
+            myUseable = null;
+        }
         if (secondsToLock > 0 && References.alarmManager.AlarmHasSounded())
         {
             secondsToLock -= Time.deltaTime;

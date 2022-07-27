@@ -60,6 +60,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2052810779436208105, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: ammo
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810779436208105, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
       propertyPath: kickAmount
       value: 3
       objectReference: {fileID: 0}

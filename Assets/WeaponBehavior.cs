@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WeaponBehavior : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class WeaponBehavior : MonoBehaviour
 
     public AudioSource audioSource;
     public float kickAmount;
+
+    public int ammo;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +31,7 @@ public class WeaponBehavior : MonoBehaviour
 
     public void BePickedUpByPlayer()
     {
-        References.thePlayer.weapons.Add(this); //add weapon to list
+        
 
         //snap position to player
         transform.position = References.thePlayer.transform.position;
@@ -36,8 +39,9 @@ public class WeaponBehavior : MonoBehaviour
         //then parent weapon to player so it moves with them as well
         transform.SetParent(References.thePlayer.transform);
         //make it the currently active weapon
-        References.thePlayer.SelectLatestWeapon();
+ 
         References.alarmManager.RaiseAlertLevel();
+        References.thePlayer.PickUpWeapon(this);
     }
 
     public void Fire(Vector3 targetPosition)
@@ -45,12 +49,14 @@ public class WeaponBehavior : MonoBehaviour
         //FIRING
         
         //if clicked, create bullet at our current position
-        if (secondsSinceLastShot >= secondsBetweenShots)
+        if (secondsSinceLastShot >= secondsBetweenShots && ammo > 0)
         {
             //ready to fire
             References.alarmManager.SoundTheAlarm();
             audioSource.Play();
             References.screenshake.joltVector = transform.forward * kickAmount;
+
+            //multi-fire, like shotgun
             for (int i = 0; i < numberOfProjectiles; i++)
             {
                 GameObject newBullet = Instantiate(bulletPrefab, transform.position + transform.forward, transform.rotation); //transform.forward = 1 unit in forward direction (z?)
@@ -63,6 +69,16 @@ public class WeaponBehavior : MonoBehaviour
                 newBullet.transform.LookAt(inaccuratePosition);
                 secondsSinceLastShot = 0;
             }
+            ammo--;
         }
+    }
+
+    public void Drop()
+    {
+        transform.parent = null; //no longer attached to player
+
+        //move from 'don't destroy on load' into the regular scene (so it does get destroyed on new game)
+        SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetActiveScene());
+        GetComponent<Useable>().enabled = true;
     }
 }

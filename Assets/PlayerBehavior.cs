@@ -8,8 +8,8 @@ public class PlayerBehavior : MonoBehaviour
                         //inspector always OVERRIDES values 
                         //so DELCARE here, then TWEAK in inspector
 
-    public List<WeaponBehavior> weapons = new List<WeaponBehavior>(); //List<ScriptName> varName = new List<ScriptName>();
-    public int selectedWeaponIndex;
+    public WeaponBehavior mainWeapon;
+    public WeaponBehavior secondaryWeapon;
 
     public int score;
 
@@ -19,13 +19,7 @@ public class PlayerBehavior : MonoBehaviour
         References.thePlayer = this;
     }
 
-    void Start()
-    {
-        
-        selectedWeaponIndex = 0;
-    }
-
-    public void IncreaseScore(int amount )
+    public void IncreaseScore(int amount)
     {
         score += amount;
         References.canvas.scoreText.text = score.ToString();
@@ -34,8 +28,6 @@ public class PlayerBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        //Debug.Log(Input.GetAxis("Vertical"));
 
         //MOVEMENT: WASD
         Vector3 inputVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")); //x, y, z
@@ -51,17 +43,17 @@ public class PlayerBehavior : MonoBehaviour
         transform.LookAt(lookAtPosition);//face new position
 
         //FIRING
-        
-        if (weapons.Count > 0 && Input.GetButton("Fire1"))
+
+        if (mainWeapon != null && Input.GetButton("Fire1"))
         {
             //tell weapon to fire
-            weapons[selectedWeaponIndex].Fire(cursorPosition);
+            mainWeapon.Fire(cursorPosition);
         }
 
         //change weapon
-        if (weapons.Count > 0 && Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Fire2"))
         {
-            ChangeWeaponIndex(selectedWeaponIndex + 1);
+            SwitchWeapons();
         }
 
         //use item
@@ -84,30 +76,54 @@ public class PlayerBehavior : MonoBehaviour
                 nearestUseable.Use();
             }
         }
-
-        
     }
 
-    public void SelectLatestWeapon()
+    public void PickUpWeapon(WeaponBehavior weapon)
     {
-        ChangeWeaponIndex(weapons.Count - 1);
-    }
-
-    private void ChangeWeaponIndex(int index)
-    {
-        //selectedWeaponIndex += 1;
-        selectedWeaponIndex = index;
-        selectedWeaponIndex = selectedWeaponIndex % weapons.Count; //in unity, % is remainder, NOT modulus...so find work around
-
-        for (int i = 0; i < weapons.Count ; i++)
+        if (mainWeapon == null)
         {
-            if (i == selectedWeaponIndex)
+            SetAsMainWeapon(weapon);
+        }
+        else
+        {
+            //if we already have a main weapon
+            if (secondaryWeapon == null)
             {
-                weapons[i].gameObject.SetActive(true);
-            } else
-            {
-                weapons[i].gameObject.SetActive(false);
+                SetAsSecondaryWeapon(weapon);
             }
+            else
+            {
+                //both slots already full, then drop weapon currently being held, keep 2ndary one in 'backpack'
+                //drop old main
+                mainWeapon.Drop();
+
+                //set new main
+                SetAsMainWeapon(weapon);
+            }
+        }
+    }
+
+    void SetAsMainWeapon(WeaponBehavior weapon)
+    {
+        mainWeapon = weapon;
+        References.canvas.mainWeaponPanel.AssignWeapon(weapon);
+        weapon.gameObject.SetActive(true);
+    }
+
+    void SetAsSecondaryWeapon(WeaponBehavior weapon)
+    {
+        secondaryWeapon = weapon;
+        References.canvas.secondaryWeaponPanel.AssignWeapon(weapon);
+        weapon.gameObject.SetActive(false);
+    }
+
+    private void SwitchWeapons()
+    {
+        if (mainWeapon != null && secondaryWeapon != null)
+        {
+            WeaponBehavior oldMainWeapon = mainWeapon;
+            SetAsMainWeapon(secondaryWeapon);
+            SetAsSecondaryWeapon(oldMainWeapon);
         }
     }
 

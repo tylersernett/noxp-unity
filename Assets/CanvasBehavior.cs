@@ -15,6 +15,9 @@ public class CanvasBehavior : MonoBehaviour
     public GameObject creditsMenu;
     public TextMeshProUGUI scoreText;
 
+    public WeaponPanel mainWeaponPanel;
+    public WeaponPanel secondaryWeaponPanel;
+
     // Awake happens before Start()
     void Awake()
     {
