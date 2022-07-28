@@ -314,6 +314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86868786dbc82a141936a33400e72bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalPosition: {x: 0, y: 0, z: 0}
+  desiredPosition: {x: 0, y: 0, z: 0}
   joltVector: {x: 0, y: 0, z: 0}
   shakeAmount: 0
   joltDecayFactor: 0.7

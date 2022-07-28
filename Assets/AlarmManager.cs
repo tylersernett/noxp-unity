@@ -76,6 +76,7 @@ public class AlarmManager : MonoBehaviour
 
     public bool AlarmHasSounded()
     {
+        if (maxAlertLevel == 0) { return false; }
         return alertLevel >= maxAlertLevel;
     }
 

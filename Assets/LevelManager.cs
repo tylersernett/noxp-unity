@@ -30,7 +30,6 @@ public class LevelManager : MonoBehaviour
     public void StartNewGame()
     {
         SceneManager.LoadScene("Startup");
-        Destroy(References.essentials.gameObject);
         Time.timeScale = 1;
     }
 
