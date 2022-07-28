@@ -19,7 +19,7 @@ public class References
 
     public static Persistent essentials;
 
-    public static Screenshake screenshake;
+    public static CameraTools cameraTools;
 
     public static List<NavPoint> navPoints = new List<NavPoint>(); //use new when initializing Lists
 

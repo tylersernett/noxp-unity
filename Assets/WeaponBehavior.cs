@@ -54,7 +54,7 @@ public class WeaponBehavior : MonoBehaviour
             //ready to fire
             References.alarmManager.SoundTheAlarm();
             audioSource.Play();
-            References.screenshake.joltVector = transform.forward * kickAmount;
+            References.cameraTools.joltVector = transform.forward * kickAmount;
 
             //multi-fire, like shotgun
             for (int i = 0; i < numberOfProjectiles; i++)

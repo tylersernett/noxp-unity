@@ -19,7 +19,7 @@ public class DeathEffect : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        References.screenshake.shakeAmount = shakeAmount;
+        References.cameraTools.shakeAmount = shakeAmount;
         maxLightIntensity = myLight.intensity;
         secondsLeft = duration;
     }
