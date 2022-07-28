@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 240ef40d59a75a041ae62d449e672166, type: 2}
 --- !u!1 &266700713
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,13 +314,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86868786dbc82a141936a33400e72bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalPosition: {x: 0, y: 0, z: 0}
-  desiredPosition: {x: 0, y: 0, z: 0}
   joltVector: {x: 0, y: 0, z: 0}
   shakeAmount: 0
   joltDecayFactor: 0.7
-  shakeDecayFactor: 0
-  maxMoveSpeed: 100
+  shakeDecayFactor: 0.9
+  maxMoveSpeed: 200
   cameraOffset: {x: 0, y: 0, z: 0}
 --- !u!1001 &1525210441
 PrefabInstance:
@@ -464,7 +462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alarmSounded: 0
-  firstLevelName: Level 1
+  firstLevelName: Level 2
   secondsBeforeNextLevel: 3
   graceTimeAtEndOfLevel: 3
   secondsBeforeShowingDeathMenu: 1

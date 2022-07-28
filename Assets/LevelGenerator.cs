@@ -17,6 +17,9 @@ public class LevelGenerator : MonoBehaviour
     public int numberOfGuardsToCreate;
     public int numberOfSpawnersToCreate;
 
+    public int widthInChunks;
+    public int lengthInChunks;
+
     private void Awake()
     {
         References.levelGenerator = this;
@@ -25,16 +28,17 @@ public class LevelGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        for (int i = 0; i < 3; i++)
+        for (int j = 0; j < lengthInChunks; j++)
         {
-            //get a random chunk type
-            int randomChunkIndex = Random.Range(0, possibleChunkPrefabs.Count);
-            GameObject randomChunkType = possibleChunkPrefabs[randomChunkIndex];
-            Vector3 spawnPosition = transform.position + new Vector3(i * 15, 0, 0);
-            Instantiate(randomChunkType, spawnPosition, Quaternion.identity);
-            //.identity: default rotation, analog to vector3.zero
-            possibleChunkPrefabs.Remove(randomChunkType);
+            for (int i = 0; i < widthInChunks; i++)
+            {
+                //get a random chunk type
+                int randomChunkIndex = Random.Range(0, possibleChunkPrefabs.Count);
+                GameObject randomChunkType = possibleChunkPrefabs[randomChunkIndex];
+                Vector3 spawnPosition = transform.position + new Vector3(i * 15, 0, j * 30);
+                Instantiate(randomChunkType, spawnPosition, Quaternion.identity);
+                //.identity: default rotation, analog to vector3.zero
+            }
         }
 
         int numberOfThingsToPlace = References.plinths.Count;

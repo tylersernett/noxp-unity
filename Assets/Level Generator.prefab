@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4263066444801247168}
   - component: {fileID: 4263066444801247171}
   m_Layer: 0
-  m_Name: Level Config
+  m_Name: Level Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f4077ceccb19d4dbd92f964184224b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextLevelName: 
+  alarmLevels: 0
   possibleChunkPrefabs:
   - {fileID: 916087161719090795, guid: 0bd559c1b9d208f4fabb7f3b0cbec653, type: 3}
   - {fileID: 4297826450916213005, guid: b919938714483274a9caee377abfb17f, type: 3}
@@ -58,3 +60,5 @@ MonoBehaviour:
   fractionOfPlinthsToHaveAntiques: 0.5
   numberOfGuardsToCreate: 2
   numberOfSpawnersToCreate: 2
+  widthInChunks: 3
+  lengthInChunks: 1

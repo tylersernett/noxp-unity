@@ -31,8 +31,11 @@ public class CameraTools : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //set position by lookint @ player's pos & adding offset
-        normalPosition = References.thePlayer.transform.position + cameraOffset;
+        if (References.thePlayer != null)
+        {
+            //set position by lookint @ player's pos & adding offset
+            normalPosition = References.thePlayer.transform.position + cameraOffset;
+        }
 
         Vector3 shakeVector = new Vector3(GetRandomShakeAmount(), GetRandomShakeAmount(), GetRandomShakeAmount());
         desiredPosition = normalPosition + joltVector + shakeVector;
