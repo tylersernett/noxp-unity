@@ -36,7 +36,7 @@ public class BulletBehavior : MonoBehaviour
         GameObject theirGameObject = thisCollision.gameObject;
         //does the collision have the EnemyBehavior script?
 
-        HealthSystem theirHealthSystem = theirGameObject.GetComponent<HealthSystem>();
+        HealthSystem theirHealthSystem = theirGameObject.GetComponentInParent<HealthSystem>();
         if (theirHealthSystem != null)
         {
             theirHealthSystem.TakeDamage(damage);
