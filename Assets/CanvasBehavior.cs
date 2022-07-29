@@ -13,6 +13,10 @@ public class CanvasBehavior : MonoBehaviour
     public GameObject mainMenu;
     public GameObject currentMenu;
     public GameObject creditsMenu;
+    
+    public GameObject usePrompt;
+    public bool usePromptSignal;
+
     public TextMeshProUGUI scoreText;
 
     public WeaponPanel mainWeaponPanel;
@@ -40,6 +44,9 @@ public class CanvasBehavior : MonoBehaviour
                 ShowMenu(mainMenu);
             }
         }
+
+        usePrompt.SetActive(usePromptSignal);
+        usePromptSignal = false;
     }
 
     public void ShowMainMenu()

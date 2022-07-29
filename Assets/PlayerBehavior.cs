@@ -57,25 +57,29 @@ public class PlayerBehavior : MonoBehaviour
         }
 
         //use item
-        if (Input.GetButtonDown("Use"))
+
+        //use the NEAREST usable
+        Useable nearestUseable = null;
+        float nearestDistance = 3; //maximum pickup distance 
+        foreach (Useable thisUseable in References.useables)
         {
-            //use the NEAREST usable
-            Useable nearestUseable = null;
-            float nearestDistance = 2; //maximum pickup distance 
-            foreach (Useable thisUseable in References.useables)
+            float thisDistance = Vector3.Distance(transform.position, thisUseable.transform.position);
+            if (thisDistance <= nearestDistance)
             {
-                float thisDistance = Vector3.Distance(transform.position, thisUseable.transform.position);
-                if (thisDistance <= nearestDistance)
-                {
-                    nearestUseable = thisUseable;
-                    nearestDistance = thisDistance;
-                }
+                nearestUseable = thisUseable;
+                nearestDistance = thisDistance;
             }
-            if (nearestUseable != null)
+        }
+        if (nearestUseable != null)
+        {
+            //if something is in used range, and hasn't been used yet, show use prompt
+            References.canvas.usePromptSignal = true;
+            if (Input.GetButtonDown("Use"))
             {
                 nearestUseable.Use();
             }
         }
+
     }
 
     public void PickUpWeapon(WeaponBehavior weapon)

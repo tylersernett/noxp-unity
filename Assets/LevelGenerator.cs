@@ -87,6 +87,7 @@ public class LevelGenerator : MonoBehaviour
             possibleSpots.Remove(spotToSpawnAt); //prevent spawning 2 guards at same spot
         }
 
+        //delete a few random spawners
         while (References.spawners.Count > numberOfSpawnersToCreate)
         {
             int randomIndex = Random.Range(0, References.spawners.Count);
