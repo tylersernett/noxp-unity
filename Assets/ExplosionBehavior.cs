@@ -40,7 +40,7 @@ public class ExplosionBehavior : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         //look for health system in item we collide with. if found, do lots of damage.
-        HealthSystem theirHealthSystem = collision.gameObject.GetComponent<HealthSystem>();
+        HealthSystem theirHealthSystem = collision.gameObject.GetComponentInParent<HealthSystem>();
         if (theirHealthSystem != null)
         {
             theirHealthSystem.TakeDamage(damage);

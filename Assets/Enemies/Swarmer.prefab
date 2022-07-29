@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2303608832906084546}
   - component: {fileID: 8931310559747228565}
   m_Layer: 11
-  m_Name: Enemy
+  m_Name: Swarmer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemyPrefab;
+    GameObject enemyPrefab;
     public GameObject spawnPoint;
     public float secondsBetweenSpawns;
     float secondsSinceLastSpawn;
@@ -18,7 +18,10 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         secondsSinceLastSpawn = secondsBetweenSpawns; //set to 0 if you want a bit of a delay
+        int randomEnemyIndex = Random.Range(0, References.levelGenerator.swarmerTypes.Count);
+        enemyPrefab = References.levelGenerator.swarmerTypes[randomEnemyIndex];
     }
 
     void OnEnable()

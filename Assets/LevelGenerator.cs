@@ -12,6 +12,7 @@ public class LevelGenerator : MonoBehaviour
     public GameObject antiquePrefab;
     public GameObject guardPrefab;
 
+    public List<GameObject> swarmerTypes;
 
     public float fractionOfPlinthsToHaveAntiques;
     public int numberOfGuardsToCreate;
