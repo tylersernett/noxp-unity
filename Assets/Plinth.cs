@@ -45,7 +45,7 @@ public class Plinth : MonoBehaviour
             {
                 cage.SetActive(true);
                 myLabel.text = "ALARM";
-                //if the plinth item is still on the plint, destroy it
+                //if the plinth item is still on the plinth, destroy it
                 if (myUseable != null && myUseable.enabled)
                 {
                     Destroy(myUseable.gameObject);

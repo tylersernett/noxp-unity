@@ -21,7 +21,7 @@ public class WeaponPanel : MonoBehaviour
     {
         if (myWeapon != null)
         {
-            ammoCount.text = myWeapon.ammo.ToString();
+            ammoCount.text = myWeapon.currentAmmo.ToString();
         }
     }
 }

@@ -15,12 +15,15 @@ public class WeaponBehavior : MonoBehaviour
     public float kickAmount;
 
     public int ammo;
+    public int currentAmmo;
+    public int damage;
 
     // Start is called before the first frame update
     void Start()
     {
         secondsSinceLastShot = secondsBetweenShots; //INITIALIZEj here 
         audioSource = GetComponent<AudioSource>();
+        currentAmmo = ammo;
     }
 
     // Update is called once per frame
@@ -49,7 +52,7 @@ public class WeaponBehavior : MonoBehaviour
         //FIRING
         
         //if clicked, create bullet at our current position
-        if (secondsSinceLastShot >= secondsBetweenShots && ammo > 0)
+        if (secondsSinceLastShot >= secondsBetweenShots && currentAmmo > 0)
         {
             //ready to fire
             References.alarmManager.SoundTheAlarm();
@@ -61,6 +64,8 @@ public class WeaponBehavior : MonoBehaviour
             {
                 GameObject newBullet = Instantiate(bulletPrefab, transform.position + transform.forward, transform.rotation); //transform.forward = 1 unit in forward direction (z?)
 
+                newBullet.GetComponent<BulletBehavior>().damage = damage;
+
                 //offset target position by a random amount based on inaccuracy
                 float inaccuracy = Vector3.Distance(transform.position, targetPosition) / accuracy; //distance from player to cursor / constant
                 Vector3 inaccuratePosition = targetPosition;
@@ -69,7 +74,7 @@ public class WeaponBehavior : MonoBehaviour
                 newBullet.transform.LookAt(inaccuratePosition);
                 secondsSinceLastShot = 0;
             }
-            ammo--;
+            currentAmmo--;
         }
     }
 

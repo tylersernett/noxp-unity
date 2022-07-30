@@ -53,27 +53,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2052810779436208103, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
       propertyPath: m_Name
-      value: Uzi Variant
+      value: Sniper
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810779436208105, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: ammo
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810779436208105, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: damage
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2052810779436208105, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
       propertyPath: accuracy
-      value: 5
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2052810779436208105, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
       propertyPath: kickAmount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2052810779436208105, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
       propertyPath: secondsBetweenShots
-      value: 0.05
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2052810780401323462, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3779056f5c9f7504c9de0ca19b4b1b44, type: 2}
     - target: {fileID: 2052810780401323463, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810780401323463, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.17
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810780401323463, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810780401323463, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0022
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810780401323463, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.0881
       objectReference: {fileID: 0}
     - target: {fileID: 2749972649459645387, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
       propertyPath: m_Volume
@@ -82,10 +106,10 @@ PrefabInstance:
     - target: {fileID: 2749972649459645387, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: bd487da49eea44147a25c43fc817f699, type: 3}
+      objectReference: {fileID: 8300000, guid: f2e1b4bd72c84454d81dff9f542ec984, type: 3}
     - target: {fileID: 7358150662402562390, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
       propertyPath: displayName
-      value: Uzi
+      value: Sniper
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}

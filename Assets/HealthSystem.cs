@@ -28,6 +28,11 @@ public class HealthSystem : MonoBehaviour
         TakeDamage(currentHealth);
     }
 
+    public void ReplenishHealth()
+    {
+        currentHealth = maxHealth;
+    }
+
     //void: function does not return anything
     public void TakeDamage(float damageAmount)
     {

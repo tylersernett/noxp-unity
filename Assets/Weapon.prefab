@@ -55,6 +55,7 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   kickAmount: 0
   ammo: 20
+  damage: 1
 --- !u!135 &2374804200455939940
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &251114044780138156
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2052810779436208102, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810779436208102, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810779436208102, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810779436208102, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810779436208102, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810779436208102, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810779436208102, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810779436208102, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810779436208102, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810779436208102, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810779436208102, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810779436208103, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_Name
+      value: Railgun Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810779436208103, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810779436208105, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: ammo
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810779436208105, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810779436208105, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: kickAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810779436208105, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 5339736355900794308, guid: 43edc85e32fe956489a2545d9b1c8446, type: 3}
+    - target: {fileID: 2052810780401323463, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810780401323463, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810780401323463, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810780401323463, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052810780401323463, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749972649459645387, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_Volume
+      value: 0.479
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749972649459645387, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 954c8c14f50fc124a8b2e63560666ecb, type: 3}
+    - target: {fileID: 7358150662402562390, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}
+      propertyPath: displayName
+      value: Railgun
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 72cb0bee0982a254cb43d6b5552d6539, type: 3}

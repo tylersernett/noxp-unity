@@ -55,6 +55,12 @@ MonoBehaviour:
   - {fileID: 6423005546580515431, guid: cbc556a8aed33a5459f0036531ebb080, type: 3}
   - {fileID: 7246699579557577162, guid: f9eaed77ac4548d45befac61643a7f85, type: 3}
   - {fileID: 2234117896082555211, guid: 4e937d62113fca340ade0f7f9b112d8c, type: 3}
+  - {fileID: 6423005546580515431, guid: 7c96bfad515be534b98ffb2990408fa8, type: 3}
+  - {fileID: 2234117896082555211, guid: 1d3162b3c362530489a7535ab11d1b28, type: 3}
+  - {fileID: 7246699579557577162, guid: 2dd96d8a0d6de2f47b1676d015703421, type: 3}
+  - {fileID: 2234117896082555211, guid: 8fbb3d3690affa54d84de44819de5e46, type: 3}
+  - {fileID: 6482506151515031983, guid: c6fdf5b0c38d8d94b9f9702d98516200, type: 3}
+  - {fileID: 6482506151515031983, guid: 0ef06705dcac35f40808d1ac04ecb6ec, type: 3}
   antiquePrefab: {fileID: 3289497187534478819, guid: 37d3a618816baf344bb0358c46c62c8b, type: 3}
   guardPrefab: {fileID: 5321995062710784353, guid: 598b448c97f41104bb78629a7f9bd822, type: 3}
   swarmerTypes:

@@ -18,11 +18,22 @@ public class PlayerBehavior : MonoBehaviour
     {
         References.thePlayer = this;
     }
+    private void Start()
+    {
+        //SetAsMainWeapon(mainWeapon);
+
+        if (mainWeapon != null)
+        {
+            //mainWeapon.GetComponent<Useable>().Use();
+            References.canvas.mainWeaponPanel.AssignWeapon(mainWeapon);
+        }
+    }
+
 
     public void IncreaseScore(int amount)
     {
         score += amount;
-        References.canvas.scoreText.text = score.ToString();
+        References.canvas.scoreText.text = score.ToString();      
     }
 
     // Update is called once per frame
@@ -76,6 +87,7 @@ public class PlayerBehavior : MonoBehaviour
             References.canvas.usePromptSignal = true;
             if (Input.GetButtonDown("Use"))
             {
+                //use it up when button pressed
                 nearestUseable.Use();
             }
         }
