@@ -14,6 +14,7 @@ public class References
     public static List<Plinth> plinths = new List<Plinth>();
     public static LevelManager levelManager;
     public static AlarmManager alarmManager;
+    public static ScoreManager scoreManager;
     public static LevelGenerator levelGenerator;
 
 

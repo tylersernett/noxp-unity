@@ -18,6 +18,7 @@ public class CanvasBehavior : MonoBehaviour
     public bool usePromptSignal;
 
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI highScoreText;
 
     public WeaponPanel mainWeaponPanel;
     public WeaponPanel secondaryWeaponPanel;

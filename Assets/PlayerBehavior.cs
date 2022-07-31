@@ -11,8 +11,6 @@ public class PlayerBehavior : MonoBehaviour
     public WeaponBehavior mainWeapon;
     public WeaponBehavior secondaryWeapon;
 
-    public int score;
-
     // Start is called before the first frame update
     private void Awake()
     {
@@ -30,11 +28,7 @@ public class PlayerBehavior : MonoBehaviour
     }
 
 
-    public void IncreaseScore(int amount)
-    {
-        score += amount;
-        References.canvas.scoreText.text = score.ToString();      
-    }
+
 
     // Update is called once per frame
     void Update()
@@ -141,6 +135,11 @@ public class PlayerBehavior : MonoBehaviour
             SetAsMainWeapon(secondaryWeapon);
             SetAsSecondaryWeapon(oldMainWeapon);
         }
+    }
+
+    private void OnDestroy()
+    {
+        References.scoreManager.UpdateHighScore();
     }
 
     /*private void OnTriggerEnter(Collider other)
