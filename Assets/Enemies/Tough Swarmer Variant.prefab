@@ -76,8 +76,16 @@ PrefabInstance:
       value: Tough Swarmer Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7059267868140911218, guid: e34ff5e56a004ba46b093fd367238254, type: 3}
+      propertyPath: bounty
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7059267868140911218, guid: e34ff5e56a004ba46b093fd367238254, type: 3}
       propertyPath: maxHealth
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7059267868140911218, guid: e34ff5e56a004ba46b093fd367238254, type: 3}
+      propertyPath: secondsForBountyToDecay
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8239459283284552154, guid: e34ff5e56a004ba46b093fd367238254, type: 3}
       propertyPath: m_Materials.Array.data[0]

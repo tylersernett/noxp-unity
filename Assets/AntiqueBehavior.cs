@@ -7,7 +7,7 @@ public class AntiqueBehavior : MonoBehaviour
 
     public void BeCollected()
     {
-        References.scoreManager.IncreaseScore(1);
+        References.scoreManager.IncreaseScore(200);
         References.alarmManager.RaiseAlertLevel();
         Destroy(gameObject);
     }

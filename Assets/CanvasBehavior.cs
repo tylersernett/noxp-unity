@@ -19,6 +19,7 @@ public class CanvasBehavior : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
+    public TextMeshProUGUI recentScoreText;
 
     public WeaponPanel mainWeaponPanel;
     public WeaponPanel secondaryWeaponPanel;

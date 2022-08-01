@@ -7,6 +7,10 @@ public class ScoreManager : MonoBehaviour
     public int score;
     public int highScore;
 
+    float secondsLeftToShowRecentScore;
+    int recentScore;
+    public float defaultTimeToShowRecentscore;
+
     private void Awake()
     {
         References.scoreManager = this;
@@ -15,6 +19,16 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         highScore = PlayerPrefs.GetInt("highScore");
+        References.canvas.highScoreText.text = highScore.ToString();
+    }
+
+    public void IncreaseScore(int amount)
+    {
+        score += amount;
+        recentScore += amount;
+        secondsLeftToShowRecentScore = defaultTimeToShowRecentscore;
+        References.canvas.scoreText.text = score.ToString();
+        References.canvas.recentScoreText.text = "+" + recentScore.ToString();
     }
 
     public void UpdateHighScore()
@@ -29,9 +43,21 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    public void IncreaseScore(int amount)
+    private void Update()
     {
-        score += amount;
-        References.canvas.scoreText.text = score.ToString();
+        secondsLeftToShowRecentScore -= Time.deltaTime;
+        if (secondsLeftToShowRecentScore > 0)
+        {
+            //otherwise, show the recent score
+            References.canvas.recentScoreText.enabled = true;
+        }
+        else
+        {
+            //reset recent score when it expires
+            recentScore = 0;
+            References.canvas.recentScoreText.enabled = false;
+        }
     }
+
+
 }

@@ -14,6 +14,11 @@ public class HealthSystem : MonoBehaviour
 
     public GameObject deathEffectPrefab;
 
+    public float bounty;
+    public float chanceOfBounty;
+    public float secondsForBountyToDecay;
+    float decayRate;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +26,17 @@ public class HealthSystem : MonoBehaviour
         currentHealth = maxHealth;
         GameObject healthBarObject = Instantiate(healthBarPrefab, References.canvas.transform); //create healthbarobject
         myHealthBar = healthBarObject.GetComponent<HealthBar>();//fetch healthbar component from the object
+
+        if (Random.value > chanceOfBounty)
+        {
+            bounty = 0;
+        } 
+        if (secondsForBountyToDecay != 0) //prevent division by 0
+        {
+            decayRate = bounty / secondsForBountyToDecay;
+        }
+
+        
     }
 
     public void KillMe()
@@ -41,16 +57,22 @@ public class HealthSystem : MonoBehaviour
             currentHealth -= damageAmount;
             if (currentHealth <= 0)
             {
+                //This is where we die
                 if (deathEffectPrefab != null)
                 {
                     Instantiate(deathEffectPrefab, transform.position, transform.rotation);
                 }
+                References.scoreManager.IncreaseScore(BountyAsInt());
+
                 Destroy(gameObject);
             }
         }
     }
 
-    
+    int BountyAsInt()
+    {
+        return Mathf.FloorToInt(bounty);
+    }
 
     // Update is called once per frame
     void Update()
@@ -61,6 +83,17 @@ public class HealthSystem : MonoBehaviour
         myHealthBar.ShowHealthFraction(currentHealth / maxHealth );
         myHealthBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 2);
 
+        if (bounty > 0)
+        {
+            bounty -= decayRate * Time.deltaTime; 
+            myHealthBar.bountyText.enabled = true;
+        } else
+        {
+            bounty = 0;
+            myHealthBar.bountyText.enabled = false;
+        }
+
+        myHealthBar.bountyText.text = BountyAsInt().ToString();
     }
 
     //don't create things in the OnDestroy event -- it's only for cleaning up after yourself -- unity destroys things on gameEnd

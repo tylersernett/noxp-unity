@@ -1242,7 +1242,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SCORE
+  m_text: +300
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1269,10 +1269,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
+  m_fontSize: 32.45
   m_fontSizeBase: 20
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -1905,7 +1905,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -4, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &5987274011719021761
 RectTransform:
@@ -1924,8 +1924,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 23.5}
-  m_SizeDelta: {x: -0.0000019073486, y: 17.9}
+  m_AnchoredPosition: {x: 0, y: 44.14516}
+  m_SizeDelta: {x: 0, y: 38.5452}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &6508594002467138905
 MonoBehaviour:
@@ -2031,11 +2031,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 36.95
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 9.2
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
@@ -2111,6 +2111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   highScore: 0
+  defaultTimeToShowRecentscore: 2
 --- !u!114 &7823493537771346384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2346,6 +2347,7 @@ MonoBehaviour:
   usePromptSignal: 0
   scoreText: {fileID: 7032830322536376714}
   highScoreText: {fileID: 364121799}
+  recentScoreText: {fileID: 1395059177544032190}
   mainWeaponPanel: {fileID: 8595495575208507734}
   secondaryWeaponPanel: {fileID: 1525210443}
 --- !u!1001 &7823493538359421997
@@ -2972,6 +2974,9 @@ MonoBehaviour:
   maxHealth: 10
   healthBarPrefab: {fileID: 6696541929925730765, guid: c96397ad9a72f1940a84144fdbd1304f, type: 3}
   deathEffectPrefab: {fileID: 521370238393314097, guid: e30afb3804e34954281b348cb442750a, type: 3}
+  bounty: 0
+  chanceOfBounty: 0
+  secondsForBountyToDecay: 0
 --- !u!54 &7827617838057524933
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3060,7 +3065,7 @@ GameObject:
   - component: {fileID: 7884971120692731515}
   - component: {fileID: 1395059177544032190}
   m_Layer: 5
-  m_Name: Label
+  m_Name: Recent Score Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
