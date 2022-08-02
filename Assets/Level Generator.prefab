@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevelName: 
-  alarmLevels: 0
+  alarmLevels: 3
   possibleChunkPrefabs:
   - {fileID: 916087161719090795, guid: 0bd559c1b9d208f4fabb7f3b0cbec653, type: 3}
   - {fileID: 4297826450916213005, guid: b919938714483274a9caee377abfb17f, type: 3}
@@ -64,9 +64,9 @@ MonoBehaviour:
   antiquePrefab: {fileID: 3289497187534478819, guid: 37d3a618816baf344bb0358c46c62c8b, type: 3}
   guardPrefab: {fileID: 5321995062710784353, guid: 598b448c97f41104bb78629a7f9bd822, type: 3}
   swarmerTypes:
-  - {fileID: 3472992409513386652, guid: 5231b0270d5168b43b2e43bc8731fb94, type: 3}
   - {fileID: 6694354242168016344, guid: e34ff5e56a004ba46b093fd367238254, type: 3}
   - {fileID: 8949720731833425268, guid: b5922b9e76502964c9ea9e2d61488981, type: 3}
+  - {fileID: 3472992409513386652, guid: 5231b0270d5168b43b2e43bc8731fb94, type: 3}
   fractionOfPlinthsToHaveAntiques: 0.5
   numberOfGuardsToCreate: 2
   numberOfSpawnersToCreate: 2

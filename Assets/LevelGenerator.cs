@@ -67,7 +67,7 @@ public class LevelGenerator : MonoBehaviour
 
         //make sure spawn points are not right by the player
         List<NavPoint> possibleSpots = new List<NavPoint>();
-        float minDistanceFromPlayer = 12;
+        float minDistanceFromPlayer = 16;
         foreach (NavPoint nav in References.navPoints)
         {
             //is it far enough from the player?

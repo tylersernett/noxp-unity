@@ -246,6 +246,9 @@ MonoBehaviour:
   maxHealth: 10
   healthBarPrefab: {fileID: 6696541929925730765, guid: c96397ad9a72f1940a84144fdbd1304f, type: 3}
   deathEffectPrefab: {fileID: 521370238393314097, guid: e30afb3804e34954281b348cb442750a, type: 3}
+  bounty: 0
+  chanceOfBounty: 0
+  secondsForBountyToDecay: 0
 --- !u!114 &501681809877380071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,6 +344,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5321995062710784357}
     m_Modifications:
+    - target: {fileID: 2541000020789267670, guid: b17d2547c8302164ab7249993786871f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6423005546580515430, guid: b17d2547c8302164ab7249993786871f, type: 3}
       propertyPath: m_RootOrder
       value: 2

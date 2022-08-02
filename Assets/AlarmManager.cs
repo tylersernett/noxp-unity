@@ -78,9 +78,11 @@ public class AlarmManager : MonoBehaviour
         UpdatePips();
     }
 
+    //sound alarm with no grace period
     public void SoundTheAlarm()
     {
         alertLevel = maxAlertLevel;
+        secondsUntilAlarm = 0;
         UpdatePips();
     }
 

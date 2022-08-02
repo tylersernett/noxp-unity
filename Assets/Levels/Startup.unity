@@ -1139,8 +1139,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -222}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: -204.4886}
+  m_SizeDelta: {x: 200, y: 85.0228}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1739724084
 MonoBehaviour:
@@ -1171,8 +1171,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278649065
-  m_fontColor: {r: 0.9150943, g: 0, b: 0.026878783, a: 1}
+    rgba: 4278911231
+  m_fontColor: {r: 1, g: 0, b: 0.04464197, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1189,10 +1189,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -1321,7 +1321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alarmSounded: 0
-  firstLevelName: Level 2
+  firstLevelName: Level 1
   secondsBeforeNextLevel: 3
   graceTimeAtEndOfLevel: 3
   secondsBeforeShowingDeathMenu: 1
@@ -2485,7 +2485,7 @@ MonoBehaviour:
   scoreText: {fileID: 7032830322536376714}
   highScoreText: {fileID: 364121799}
   recentScoreText: {fileID: 1395059177544032190}
-  alarmCountdownText: {fileID: 0}
+  alarmCountdownText: {fileID: 1739724084}
   mainWeaponPanel: {fileID: 8595495575208507734}
   secondaryWeaponPanel: {fileID: 1525210443}
 --- !u!1001 &7823493538359421997
