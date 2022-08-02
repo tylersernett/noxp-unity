@@ -11,7 +11,6 @@ public class Plinth : MonoBehaviour
 
     public GameObject cage;
 
-    public float secondsToLock;
 
     private void OnEnable()
     {
@@ -33,24 +32,22 @@ public class Plinth : MonoBehaviour
 
     private void Update()
     {
-        if (myUseable!= null && myUseable.enabled == false)
+        if (myUseable != null && myUseable.enabled == false)
         {
             //don't allow plinth to disable items the player has already picked up
             myUseable = null;
         }
-        if (secondsToLock > 0 && References.alarmManager.AlarmHasSounded())
+        if (References.alarmManager.AlarmHasSounded() && cage.activeInHierarchy == false)
         {
-            secondsToLock -= Time.deltaTime;
-            if (secondsToLock <= 0)
+
+            cage.SetActive(true);
+            myLabel.text = "ALARM";
+            //if the plinth item is still on the plinth, destroy it
+            if (myUseable != null && myUseable.enabled)
             {
-                cage.SetActive(true);
-                myLabel.text = "ALARM";
-                //if the plinth item is still on the plinth, destroy it
-                if (myUseable != null && myUseable.enabled)
-                {
-                    Destroy(myUseable.gameObject);
-                }
+                Destroy(myUseable.gameObject);
             }
+
         }
     }
 }

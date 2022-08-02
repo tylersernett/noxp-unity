@@ -16,6 +16,9 @@ public class AlarmManager : MonoBehaviour
 
     public AudioSource alarmSound;
 
+    public float alarmDelay;
+    float secondsUntilAlarm;
+
     private void Awake()
     {
         References.alarmManager = this;
@@ -24,7 +27,7 @@ public class AlarmManager : MonoBehaviour
 
     private void Start()
     {
-        
+
     }
 
     private void Update()
@@ -33,15 +36,26 @@ public class AlarmManager : MonoBehaviour
         {
             alarmSound.Play();
         }
-        if (AlarmHasSounded() == false && alarmSound.isPlaying )
+        if (AlarmHasSounded() == false && alarmSound.isPlaying)
         {
             alarmSound.Stop();
+        }
+
+        if (MaxAlertLevelReached() && secondsUntilAlarm > 0)
+        {
+            References.canvas.alarmCountdownText.enabled = true;
+            secondsUntilAlarm -= Time.deltaTime;
+            References.canvas.alarmCountdownText.text = secondsUntilAlarm.ToString("N1");
+        }
+        else
+        {
+            References.canvas.alarmCountdownText.enabled = false;
         }
     }
 
     public void SetUpLevel(int desiredMaxAlertLevel)
     {
-        for (int i = 0; i< alertPips.Count; i++)
+        for (int i = 0; i < alertPips.Count; i++)
         {
             Destroy(alertPips[i].gameObject);
         }
@@ -54,6 +68,8 @@ public class AlarmManager : MonoBehaviour
             alertPips.Add(newPip.GetComponent<Image>());
         }
         alertPips.Reverse(); //so we build from the bottom up
+
+        secondsUntilAlarm = alarmDelay;
     }
 
     public void RaiseAlertLevel()
@@ -74,11 +90,17 @@ public class AlarmManager : MonoBehaviour
         UpdatePips();
     }
 
-    public bool AlarmHasSounded()
+    public bool MaxAlertLevelReached()
     {
         if (maxAlertLevel == 0) { return false; }
         return alertLevel >= maxAlertLevel;
     }
+
+    public bool AlarmHasSounded()
+    {
+        return MaxAlertLevelReached() && secondsUntilAlarm <= 0; //&& timer expired
+    }
+
 
     public void UpdatePips()
     {
