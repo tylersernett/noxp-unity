@@ -43,7 +43,6 @@ public class WeaponBehavior : MonoBehaviour
         transform.SetParent(References.thePlayer.transform);
         //make it the currently active weapon
  
-        References.alarmManager.RaiseAlertLevel();
         References.thePlayer.PickUpWeapon(this);
     }
 

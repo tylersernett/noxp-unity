@@ -9,9 +9,16 @@ public class Useable : MonoBehaviour
     public bool canBeReused; //bools default to false
     public string displayName;
 
+    public bool alarmed;
+
     public void Use()
     {
         whenUsed.Invoke();
+        if (alarmed)
+        {
+            References.alarmManager.RaiseAlertLevel();
+            alarmed = false;
+        }
         if (canBeReused == false)
         {
             enabled = false;

@@ -25,7 +25,8 @@ public class HealthSystem : MonoBehaviour
     {
         //create health panel ON the canvas
         currentHealth = maxHealth;
-        GameObject healthBarObject = Instantiate(healthBarPrefab, References.canvas.transform); //create healthbarobject
+        GameObject healthBarObject = Instantiate(healthBarPrefab, References.canvas.gameUIParent); //create healthbarobject
+        
         myHealthBar = healthBarObject.GetComponent<HealthBar>();//fetch healthbar component from the object
 
         if (Random.value > chanceOfBounty)

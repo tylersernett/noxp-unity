@@ -17,6 +17,8 @@ public class CanvasBehavior : MonoBehaviour
     public GameObject usePrompt;
     public bool usePromptSignal;
 
+    public Transform gameUIParent;
+
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
     public TextMeshProUGUI recentScoreText;

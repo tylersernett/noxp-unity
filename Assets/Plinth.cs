@@ -25,6 +25,7 @@ public class Plinth : MonoBehaviour
     public void AssignItem(GameObject item)
     {
         myUseable = item.GetComponent<Useable>();
+        myUseable.alarmed = true;
         myLabel.text = myUseable.displayName;
         myUseable.transform.position = spotForItem.transform.position;
         myUseable.transform.rotation = spotForItem.transform.rotation;

@@ -11,7 +11,6 @@ public class AmmoPickup : MonoBehaviour
         {
             RefillWeapon(References.thePlayer.mainWeapon);
             RefillWeapon(References.thePlayer.secondaryWeapon);
-            References.alarmManager.RaiseAlertLevel();
             Destroy(gameObject);
 
         }

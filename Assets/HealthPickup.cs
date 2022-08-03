@@ -9,7 +9,6 @@ public class HealthPickup : MonoBehaviour
         if (References.thePlayer != null)
         {
             References.thePlayer.GetComponentInParent<HealthSystem>().ReplenishHealth();
-            References.alarmManager.RaiseAlertLevel();
             Destroy(gameObject);
         }
     }
