@@ -1403,7 +1403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alarmSounded: 0
-  firstLevelName: Level 9
+  firstLevelName: Level 1
   secondsBeforeNextLevel: 3
   graceTimeAtEndOfLevel: 3
   secondsBeforeShowingDeathMenu: 1
@@ -2105,6 +2105,7 @@ MonoBehaviour:
   filledPip: {fileID: 21300000, guid: c6a336da140b12b45b67fba29b021639, type: 3}
   alarmSound: {fileID: 0}
   alarmDelay: 4
+  enemiesHaveSpawned: 0
 --- !u!224 &5773173568537882538
 RectTransform:
   m_ObjectHideFlags: 0

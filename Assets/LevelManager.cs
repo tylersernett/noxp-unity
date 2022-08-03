@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour
 
     public float secondsBeforeShowingDeathMenu;
     bool shownDeathMenu;
+    
 
     private void Awake()
     {
