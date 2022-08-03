@@ -301,7 +301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3837406489442996920}
   m_Layer: 0
-  m_Name: 2x2 Level Template
+  m_Name: 3x2 Level Template
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -662,7 +662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4263066444801247171, guid: af6ba9c3dc86ff14c8d23bda33cc1fb3, type: 3}
       propertyPath: widthInChunks
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4263066444801247171, guid: af6ba9c3dc86ff14c8d23bda33cc1fb3, type: 3}
       propertyPath: lengthInChunks

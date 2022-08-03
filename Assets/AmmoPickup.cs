@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AmmoPickup : MonoBehaviour
 {
+    public float fractionToReplenish;
     public void ReplenishAmmo()
     {
         if (References.thePlayer!= null)
@@ -20,7 +21,8 @@ public class AmmoPickup : MonoBehaviour
     {
         if (weapon != null)
         {
-            weapon.currentAmmo = weapon.ammo;
+            weapon.currentAmmo += Mathf.RoundToInt(weapon.ammo * fractionToReplenish);
+            weapon.currentAmmo = Mathf.Min(weapon.currentAmmo, weapon.ammo); //ensure refill doesn't exceed max
         }
     }
 }

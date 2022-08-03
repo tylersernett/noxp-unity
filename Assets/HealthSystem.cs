@@ -13,6 +13,7 @@ public class HealthSystem : MonoBehaviour
     HealthBar myHealthBar;
 
     public GameObject deathEffectPrefab;
+    public GameObject lootDrop;
 
     public float bounty;
     public float chanceOfBounty;
@@ -61,6 +62,10 @@ public class HealthSystem : MonoBehaviour
                 if (deathEffectPrefab != null)
                 {
                     Instantiate(deathEffectPrefab, transform.position, transform.rotation);
+                }
+                if (lootDrop!= null)
+                {
+                    Instantiate(lootDrop, transform.position, transform.rotation);
                 }
                 References.scoreManager.IncreaseScore(BountyAsInt());
 
