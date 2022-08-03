@@ -42,8 +42,8 @@ public class LevelGenerator : MonoBehaviour
             }
         }
 
-        int numberOfThingsToPlace = References.plinths.Count;
-        int numberOfAntiquesToPlace = Mathf.RoundToInt(numberOfThingsToPlace * fractionOfPlinthsToHaveAntiques);
+        float numberOfThingsToPlace = References.plinths.Count;
+        float numberOfAntiquesToPlace = Mathf.RoundToInt(numberOfThingsToPlace * fractionOfPlinthsToHaveAntiques);
         
 
         foreach(Plinth plinth in References.plinths)
