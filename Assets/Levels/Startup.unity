@@ -2559,6 +2559,7 @@ MonoBehaviour:
   creditsMenu: {fileID: 7823493539475758806}
   usePrompt: {fileID: 721168670}
   usePromptSignal: 0
+  gameUIParent: {fileID: 1609822686}
   scoreText: {fileID: 7032830322536376714}
   highScoreText: {fileID: 364121799}
   recentScoreText: {fileID: 1395059177544032190}
