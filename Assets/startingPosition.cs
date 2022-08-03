@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class startingPosition : MonoBehaviour
 {
+
+    private void Awake()
+    {
+        References.startingPosition = this;
+    }
     // Start is called before the first frame update
     void Start()
     {

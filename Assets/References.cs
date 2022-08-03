@@ -16,6 +16,7 @@ public class References
     public static AlarmManager alarmManager;
     public static ScoreManager scoreManager;
     public static LevelGenerator levelGenerator;
+    public static startingPosition startingPosition;
 
 
     public static Persistent essentials;

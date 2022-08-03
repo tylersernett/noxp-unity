@@ -71,7 +71,7 @@ public class LevelGenerator : MonoBehaviour
         foreach (NavPoint nav in References.navPoints)
         {
             //is it far enough from the player?
-            if (Vector3.Distance(nav.transform.position, References.thePlayer.transform.position) >= minDistanceFromPlayer)
+            if (Vector3.Distance(nav.transform.position, References.startingPosition.transform.position) >= minDistanceFromPlayer)
             {
                 possibleSpots.Add(nav);
             }
