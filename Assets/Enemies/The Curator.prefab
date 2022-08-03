@@ -250,6 +250,7 @@ MonoBehaviour:
   bounty: 0
   chanceOfBounty: 0
   secondsForBountyToDecay: 0
+  showScoreMenu: 1
 --- !u!114 &501681809877380071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,6 +339,7 @@ MonoBehaviour:
         m_CallState: 2
   canBeReused: 0
   displayName: 
+  alarmed: 0
 --- !u!1001 &7562495399345653562
 PrefabInstance:
   m_ObjectHideFlags: 0

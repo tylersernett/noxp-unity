@@ -13,6 +13,7 @@ public class CanvasBehavior : MonoBehaviour
     public GameObject mainMenu;
     public GameObject currentMenu;
     public GameObject creditsMenu;
+    public GameObject scoreMenu;
     
     public GameObject usePrompt;
     public bool usePromptSignal;
@@ -57,6 +58,11 @@ public class CanvasBehavior : MonoBehaviour
     public void ShowMainMenu()
     {
         ShowMenu(mainMenu);
+    }
+
+    public void ShowScoreMenu()
+    {
+        ShowMenu(scoreMenu);
     }
 
     public void HideMenu()

@@ -20,6 +20,8 @@ public class HealthSystem : MonoBehaviour
     public float secondsForBountyToDecay;
     float decayRate;
 
+    public bool showScoreMenu;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,7 +71,10 @@ public class HealthSystem : MonoBehaviour
                     Instantiate(lootDrop, transform.position, transform.rotation);
                 }
                 References.scoreManager.IncreaseScore(BountyAsInt());
-
+                if (showScoreMenu)
+                {
+                    References.canvas.ShowScoreMenu();
+                }
                 Destroy(gameObject);
             }
         }

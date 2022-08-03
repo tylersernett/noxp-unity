@@ -57,12 +57,13 @@ public class LevelManager : MonoBehaviour
             secondsBeforeNextLevel = graceTimeAtEndOfLevel;
         }
 
+        //Player is Dead
         if (References.thePlayer == null && shownDeathMenu == false)
         {
             secondsBeforeShowingDeathMenu -= Time.deltaTime;
             if (secondsBeforeShowingDeathMenu <= 0)
             {
-                References.canvas.ShowMainMenu();
+                References.canvas.ShowScoreMenu();
                 shownDeathMenu = true;
             }
         }
