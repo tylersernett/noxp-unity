@@ -28,6 +28,8 @@ public class CanvasBehavior : MonoBehaviour
     public WeaponPanel mainWeaponPanel;
     public WeaponPanel secondaryWeaponPanel;
 
+
+
     // Awake happens before Start()
     void Awake()
     {
@@ -75,11 +77,11 @@ public class CanvasBehavior : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void StartNewGame()
-    {
-        HideMenu();
-        SceneManager.LoadScene(firstScene.name);
-    }
+    //public void StartNewGame()
+    //{
+    //    HideMenu();
+    //    SceneManager.LoadScene(firstScene.name);
+    //}
 
     public void QuitGame()
     {

@@ -271,7 +271,7 @@ MonoBehaviour:
   myLight: {fileID: 5321995061821522195}
   turnSpeed: 1
   myWeapon: {fileID: 892297254290228990}
-  reactionTime: 0.2
+  reactionTime: 0.4
 --- !u!54 &5321995062710784352
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -374,6 +374,10 @@ PrefabInstance:
     - target: {fileID: 7246699578157302762, guid: 2dd96d8a0d6de2f47b1676d015703421, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246699579557577156, guid: 2dd96d8a0d6de2f47b1676d015703421, type: 3}
+      propertyPath: ammo
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 7246699579557577162, guid: 2dd96d8a0d6de2f47b1676d015703421, type: 3}
       propertyPath: m_Name

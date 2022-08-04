@@ -21,6 +21,8 @@ public class LevelGenerator : MonoBehaviour
     public int widthInChunks;
     public int lengthInChunks;
 
+    public bool showMenuWhenDone;
+
     private void Awake()
     {
         References.levelGenerator = this;

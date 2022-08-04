@@ -2260,7 +2260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alarmSounded: 0
-  firstLevelName: Level 9
+  firstLevelName: Tutorial 1
   secondsBeforeNextLevel: 3
   graceTimeAtEndOfLevel: 3
   secondsBeforeShowingDeathMenu: 1
@@ -4047,13 +4047,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c95d654330135498ebe226f0832bfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 99999910
   healthBarPrefab: {fileID: 6696541929925730765, guid: c96397ad9a72f1940a84144fdbd1304f, type: 3}
   deathEffectPrefab: {fileID: 521370238393314097, guid: e30afb3804e34954281b348cb442750a, type: 3}
   lootDrop: {fileID: 0}
   bounty: 0
   chanceOfBounty: 0
   secondsForBountyToDecay: 0
+  showScoreMenu: 0
 --- !u!54 &7827617838057524933
 Rigidbody:
   m_ObjectHideFlags: 0

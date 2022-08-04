@@ -13,7 +13,7 @@ public class LevelManager : MonoBehaviour
 
     public float secondsBeforeShowingDeathMenu;
     bool shownDeathMenu;
-    
+
 
     private void Awake()
     {
@@ -23,7 +23,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         SceneManager.LoadScene(firstLevelName);
-        
+
         secondsBeforeNextLevel = graceTimeAtEndOfLevel;
         shownDeathMenu = false;
     }
@@ -38,22 +38,32 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         //if all enemies are dead, 
-        if (References.allEnemies.Count < 1)
+        if (References.allEnemies.Count < 1 && References.alarmManager.enemiesHaveSpawned)
         {
-            //wait a bit
-            secondsBeforeNextLevel -= Time.deltaTime;
-
             //stop alarm
             References.alarmManager.StopTheAlarm();
-
-            if (secondsBeforeNextLevel <= 0)
+            if (secondsBeforeNextLevel > 0) //always check this to prevent infinite ShowMainMenu bug [tutorial]
             {
-                //then go to the next level
-                SceneManager.LoadScene(References.levelGenerator.nextLevelName);
+                //wait a bit
+                secondsBeforeNextLevel -= Time.deltaTime;
+
+                if (secondsBeforeNextLevel <= 0)
+                {
+                    if (References.levelGenerator.showMenuWhenDone) //used to end tutorial
+                    {
+                        References.canvas.ShowMainMenu();
+                    }
+                    else
+                    {
+                        //then go to the next level
+                        SceneManager.LoadScene(References.levelGenerator.nextLevelName);
+                    }
+                }
             }
         }
         else
         {
+            //not all enemies are dead
             secondsBeforeNextLevel = graceTimeAtEndOfLevel;
         }
 
