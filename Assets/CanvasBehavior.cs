@@ -14,7 +14,7 @@ public class CanvasBehavior : MonoBehaviour
     public GameObject currentMenu;
     public GameObject creditsMenu;
     public GameObject scoreMenu;
-    
+
     public GameObject usePrompt;
     public bool usePromptSignal;
 
@@ -96,6 +96,7 @@ public class CanvasBehavior : MonoBehaviour
         {
             menuToShow.SetActive(true);
             Time.timeScale = 0;
+            References.thePlayer.mainWeapon.secondsSinceLastShot = 0;
         }
     }
 }

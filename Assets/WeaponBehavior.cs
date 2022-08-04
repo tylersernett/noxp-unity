@@ -9,7 +9,7 @@ public class WeaponBehavior : MonoBehaviour
     public float accuracy;
     public float secondsBetweenShots;
     public float numberOfProjectiles;
-    float secondsSinceLastShot;
+    public float secondsSinceLastShot;
 
     public AudioSource audioSource;
     public float kickAmount;
