@@ -247,9 +247,9 @@ MonoBehaviour:
   healthBarPrefab: {fileID: 6696541929925730765, guid: c96397ad9a72f1940a84144fdbd1304f, type: 3}
   deathEffectPrefab: {fileID: 521370238393314097, guid: e30afb3804e34954281b348cb442750a, type: 3}
   lootDrop: {fileID: 6482506151515031983, guid: 9b56c3735fee22f479a951405b1b01d3, type: 3}
-  bounty: 0
-  chanceOfBounty: 0
-  secondsForBountyToDecay: 0
+  bounty: 2000
+  chanceOfBounty: 1
+  secondsForBountyToDecay: 150
   showScoreMenu: 1
 --- !u!114 &501681809877380071
 MonoBehaviour:
@@ -378,6 +378,10 @@ PrefabInstance:
     - target: {fileID: 7246699579557577156, guid: 2dd96d8a0d6de2f47b1676d015703421, type: 3}
       propertyPath: ammo
       value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246699579557577156, guid: 2dd96d8a0d6de2f47b1676d015703421, type: 3}
+      propertyPath: kickAmount
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7246699579557577162, guid: 2dd96d8a0d6de2f47b1676d015703421, type: 3}
       propertyPath: m_Name

@@ -30,7 +30,13 @@ public class LevelManager : MonoBehaviour
 
     public void StartNewGame()
     {
-        SceneManager.LoadScene("Startup");
+        SceneManager.LoadScene("Start Game");
+        Time.timeScale = 1;
+    }
+
+    public void StartTutorial()
+    {
+        SceneManager.LoadScene("Start Tutorial");
         Time.timeScale = 1;
     }
 
